@@ -1,3 +1,108 @@
-/*=======================================================
-=  ÉVÉNEMENTS CSS FILE  = style spécifique pour la page evenements.html
-=======================================================*/
+/* ============================================
+   ÉVÉNEMENTS — Styles spécifiques
+   ============================================ */
+
+/* ── Liste événements ── */
+.liste-evenements { padding: 80px 0; background: var(--blanc); }
+
+.evt-detail {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 52px;
+  align-items: start;
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.evt-detail:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.evt-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  background: var(--rose-pale);
+  border: 2px dashed var(--rose-vif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--rose-vif);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.evt-photo img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.evt-contenu { display: flex; flex-direction: column; gap: 16px; }
+
+.evt-meta { display: flex; align-items: center; gap: 12px; }
+.evt-date-badge {
+  background: var(--rose-vif);
+  color: var(--blanc);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: 30px;
+}
+.evt-type {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--vert-btn);
+  border: 2px solid var(--vert-btn);
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+.evt-contenu h2 { font-size: 1.5rem; }
+
+.evt-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.evt-infos span {
+  font-size: 0.85rem;
+  color: var(--texte-clair);
+  font-weight: 600;
+}
+
+.evt-contenu > p {
+  font-size: 0.92rem;
+  color: var(--texte-clair);
+  line-height: 1.8;
+}
+
+/* ── CTA ── */
+.cta-evenements { background: var(--rose-pale); padding: 72px 0; }
+.cta-evt-inner { text-align: center; }
+.cta-evt-inner h2 { margin-bottom: 14px; }
+.cta-evt-inner p {
+  font-size: 0.95rem;
+  color: var(--texte-clair);
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .evt-detail {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+  }
+  .liste-evenements { padding: 48px 0; }
+  .cta-evenements { padding: 48px 0; }
+}

@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Événements — Village des Femmes</title>
-  <link rel="stylesheet" href="evenements.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="evenements.css" />
 </head>
 <body>
 
-    <!-- ══ HEADER ══ -->
   <header class="site-header">
-    <nav class="nav-wrapper" aria-label="Navigation principale">
+    <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
+    <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <!-- Remplace src par ton logo -->
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -25,22 +24,130 @@
         <li><a href="notre-mission.html">Notre Mission</a></li>
         <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
         <li><a href="evenements.html" class="active">Événements</a></li>
-        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li class="nav-btn"><a href="nous-soutenir.html">Nous Soutenir</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-   <!-- ══ FOOTER ══ -->
+  <!-- ══ HERO ══ -->
+  <section class="hero-page">
+    <span class="section-tag">Agenda</span>
+    <h1><span class="highlight">Événements</span> à venir</h1>
+    <p>
+      Ateliers, permanences, rencontres et festivités — retrouvez tous nos événements
+      et venez nous rejoindre !
+    </p>
+  </section>
+
+  <!-- ══ LISTE ÉVÉNEMENTS ══ -->
+  <section class="liste-evenements">
+    <div class="container">
+
+      <!-- Événement 1 -->
+      <article class="evt-detail" id="evt1">
+        <div class="evt-photo">
+          <div class="evt-photo-placeholder">
+            <!-- <img src="images/event1.jpg" alt="Atelier bien-être"> -->
+            <span>Photo 1</span>
+          </div>
+        </div>
+        <div class="evt-contenu">
+          <div class="evt-meta">
+            <span class="evt-date-badge">22 Juin</span>
+            <span class="evt-type">Atelier</span>
+          </div>
+          <h2>Atelier bien-être et sophrologie</h2>
+          <div class="evt-infos">
+            <span>📅 Samedi 22 juin 2024 · 14h00–16h00</span>
+            <span>📍 Salle associative, 12 rue des Lilas, Paris 15e</span>
+            <span>👤 Ouvert à toutes · Gratuit · Sur inscription</span>
+          </div>
+          <p>
+            Venez profiter d'un après-midi doux et ressourçant autour du bien-être
+            et de la sophrologie. Animé par Marie, sophrologue certifiée et bénévole
+            de l'association, cet atelier vous permettra d'explorer des techniques
+            de relaxation et de gestion du stress dans un cadre bienveillant.
+          </p>
+          <a href="contact.html" class="btn btn-rose">S'inscrire</a>
+        </div>
+      </article>
+
+      <!-- Événement 2 -->
+      <article class="evt-detail" id="evt2">
+        <div class="evt-photo">
+          <div class="evt-photo-placeholder">
+            <!-- <img src="images/event2.jpg" alt="Permanence juridique"> -->
+            <span>Photo 2</span>
+          </div>
+        </div>
+        <div class="evt-contenu">
+          <div class="evt-meta">
+            <span class="evt-date-badge">25 Juin</span>
+            <span class="evt-type">Permanence</span>
+          </div>
+          <h2>Permanence juridique</h2>
+          <div class="evt-infos">
+            <span>📅 Mardi 25 juin 2024 · 10h00–12h00</span>
+            <span>📍 Village des Femmes</span>
+            <span>👤 Sur rendez-vous · Gratuit · Confidentiel</span>
+          </div>
+          <p>
+            Notre juriste bénévole est disponible pour répondre à toutes vos
+            questions : droits liés à la séparation, protection des enfants,
+            logement, emploi, titre de séjour… Un espace d'écoute et d'orientation.
+          </p>
+          <a href="contact.html" class="btn btn-rose">Prendre rendez-vous</a>
+        </div>
+      </article>
+
+      <!-- Événement 3 -->
+      <article class="evt-detail" id="evt3">
+        <div class="evt-photo">
+          <div class="evt-photo-placeholder">
+            <!-- <img src="images/event3.jpg" alt="Café des femmes"> -->
+            <span>Photo 3</span>
+          </div>
+        </div>
+        <div class="evt-contenu">
+          <div class="evt-meta">
+            <span class="evt-date-badge">4 Juil.</span>
+            <span class="evt-type">Rencontre</span>
+          </div>
+          <h2>Café des Femmes</h2>
+          <div class="evt-infos">
+            <span>📅 Jeudi 4 juillet 2024 · 10h30–12h00</span>
+            <span>📍 Village des Femmes</span>
+            <span>👤 Entrée libre · Tout public</span>
+          </div>
+          <p>
+            Un café convivial et chaleureux pour se retrouver, échanger et tisser
+            des liens. Le Café des Femmes est un rendez-vous mensuel ouvert à toutes,
+            sans inscription. Café et thé offerts par l'association.
+          </p>
+          <a href="contact.html" class="btn btn-rose">En savoir plus</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-evenements">
+    <div class="container cta-evt-inner">
+      <h2>Vous souhaitez proposer un atelier ?</h2>
+      <p>Vous êtes professionnel(le), bénévole ou simplement passionné(e) ?
+         Contactez-nous pour co-organiser un événement !</p>
+      <a href="contact.html" class="btn btn-noir">Nous contacter</a>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village des Femmes</span>
-        <p class="footer-bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="footer-bio">Association d'aide, d'écoute et d'accompagnement des femmes en situation de vulnérabilité.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -56,29 +163,26 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-          <li><a href="#">Ressource 4</a></li>
-          <li><a href="#">Ressource 5</a></li>
-          <li><a href="#">Ressource 6</a></li>
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
+          <li><a href="#">Droits des femmes</a></li>
+          <li><a href="#">Hébergement d'urgence</a></li>
+          <li><a href="#">Aide juridictionnelle</a></li>
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Téléphone</a></li>
-          <li><a href="#">Adresse</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
+          <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2024 Village des Femmes — Tous droits réservés
-    </div>
+    <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
 
   <script src="main.js"></script>

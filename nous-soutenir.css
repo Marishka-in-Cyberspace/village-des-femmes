@@ -7,68 +7,64 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 420px;
+  gap: 60px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 40px;
-  gap: 60px;
+  padding: 64px 40px;
 }
-
-.hero-content h1 {
-  margin-bottom: 20px;
-}
-.hero-content .hero-desc {
+.hero-content h1 { margin-bottom: 18px; }
+.hero-content p {
   font-size: 0.95rem;
   color: var(--texte-clair);
-  max-width: 380px;
-  margin-bottom: 32px;
   line-height: 1.8;
+  max-width: 400px;
+  margin-bottom: 32px;
 }
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero-photo {
+.hero-soutenir-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  background: var(--rose-pale);
+  border: 2px dashed var(--rose-vif);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--rose-vif);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .hero-photo img {
   width: 100%;
-  max-width: 380px;
   border-radius: var(--radius-lg);
   aspect-ratio: 4/3;
   object-fit: cover;
-  background: var(--gris-clair);
-  /* placeholder visuel si pas d'image */
-  min-height: 200px;
 }
 
 /* ── Pourquoi ── */
 .pourquoi {
   background: var(--blanc);
-  padding: 72px 0;
+  padding: 80px 0;
   text-align: center;
 }
-.pourquoi h2 {
-  margin-bottom: 52px;
-}
+.pourquoi h2 { margin-bottom: 56px; }
 
 .piliers-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  text-align: center;
+  gap: 36px;
 }
-
 .pilier {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
 }
+
+/* Cercles avec border */
 .pilier-icon {
   width: 96px;
   height: 96px;
@@ -77,22 +73,14 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 4px;
+  border: 3px solid transparent;
+  flex-shrink: 0;
 }
-.pilier-icon img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-}
+.pilier-icon img { width: 55%; object-fit: contain; }
 
-.pilier-vert-clair { background: #c4dfc4; }
-.pilier-rose-outline {
-  background: transparent;
-  border: 3px solid var(--rose-vif);
-  /* Centre sans fond */
-  background: #fce4e8;
-}
-.pilier-rose-pale { background: var(--rose-pale); }
+.vert-clair  { background: #c4dfc4; border-color: var(--vert-sauge); }
+.rose-outline { background: #fce4e8; border-color: var(--rose-vif); }
+.rose-pale   { background: var(--rose-pale); border-color: #f0aab8; }
 
 .pilier h3 {
   font-family: 'Lato', sans-serif;
@@ -101,7 +89,7 @@
   color: var(--texte);
 }
 .pilier p {
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   color: var(--texte-clair);
   line-height: 1.6;
 }
@@ -109,99 +97,120 @@
 /* ── Faire un don ── */
 .faire-un-don {
   background: var(--rose-pale);
-  padding: 56px 40px;
+  padding: 72px 0;
 }
 .don-card {
-  max-width: 700px;
-  margin: 0 auto;
-  background: var(--rose-pale);
+  max-width: 660px;
 }
-.don-card h2 {
-  margin-bottom: 14px;
-  color: var(--texte);
-}
+.don-card h2 { margin-bottom: 14px; }
 .don-card > p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--texte-clair);
-  margin-bottom: 28px;
-  max-width: 520px;
-  line-height: 1.7;
+  line-height: 1.75;
+  margin-bottom: 30px;
 }
 
-.montants {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
+.montants { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .montant-btn {
-  padding: 10px 22px;
+  padding: 10px 24px;
   border-radius: 30px;
   border: 2px solid var(--rose-vif);
   background: var(--blanc);
   color: var(--texte);
   font-family: 'Lato', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   transition: all var(--transition);
 }
 .montant-btn.active,
-.montant-btn:hover {
-  background: var(--rose-vif);
-  color: var(--blanc);
-}
-.montant-btn.autre {
-  border-color: #ccc;
-  color: var(--texte-clair);
-}
-.montant-btn.autre:hover {
-  border-color: var(--rose-vif);
-  background: var(--rose-pale);
-  color: var(--texte);
-}
+.montant-btn:hover { background: var(--rose-vif); color: var(--blanc); }
+.montant-btn.autre { border-color: #bbb; color: var(--texte-clair); }
+.montant-btn.autre:hover { border-color: var(--rose-vif); background: #fce8ea; color: var(--texte); }
 
-.autre-montant-wrap {
-  margin-bottom: 20px;
-}
+.autre-montant-wrap { margin-bottom: 18px; }
 .autre-montant-wrap input {
-  padding: 10px 18px;
+  padding: 10px 20px;
   border: 2px solid var(--rose-vif);
   border-radius: 30px;
   font-size: 0.95rem;
   font-family: 'Lato', sans-serif;
   outline: none;
   width: 200px;
+  background: var(--blanc);
 }
 .autre-montant-wrap input:focus { border-color: var(--rose-bouton); }
 
-.btn-don {
-  margin-top: 6px;
-  padding: 14px 36px;
-  font-size: 0.85rem;
+.btn-don { padding: 14px 40px; font-size: 0.85rem; margin-top: 4px; }
+.don-note {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--texte-clair);
+}
+
+/* ── Bénévole ── */
+.benevole-section { padding: 72px 0; background: var(--blanc); }
+.benevole-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.benevole-text { display: flex; flex-direction: column; gap: 16px; }
+.benevole-text p { font-size: 0.92rem; color: var(--texte-clair); line-height: 1.8; }
+.benevole-liste {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.benevole-liste li {
+  font-size: 0.88rem;
+  color: var(--texte);
+  font-weight: 600;
+}
+
+.benevole-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  background: #d4ecd4;
+  border: 2px dashed var(--vert-sauge);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--vert-fonce);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.benevole-photo img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  object-fit: cover;
 }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-soutenir {
     grid-template-columns: 1fr;
-    text-align: center;
     padding: 40px 20px;
     gap: 32px;
+    text-align: center;
   }
-  .hero-content .hero-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-content p { max-width: 100%; }
   .hero-btns { justify-content: center; }
-  .hero-photo img { max-width: 320px; margin: 0 auto; }
 
-  .piliers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
+  .piliers-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .pourquoi { padding: 48px 20px; }
-}
+  .faire-un-don { padding: 48px 20px; }
 
+  .benevole-inner { grid-template-columns: 1fr; gap: 32px; }
+  .benevole-section { padding: 48px 0; }
+}
 @media (max-width: 520px) {
-  .piliers-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .faire-un-don { padding: 40px 20px; }
+  .piliers-grid { grid-template-columns: 1fr 1fr; }
   .montants { gap: 8px; }
 }

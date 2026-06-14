@@ -1,3 +1,149 @@
-/*===================================================
-=  NOTRE MISSION CSS FILE  = style spécifique pour la page notre-mission.html
-===================================================*/
+/* ============================================
+   NOTRE MISSION — Styles spécifiques
+   ============================================ */
+
+/* ── Hero ── */
+.hero-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 52px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 40px;
+}
+.hero-mission-text h1 { margin-bottom: 18px; }
+.hero-mission-text p {
+  font-size: 0.95rem;
+  color: var(--texte-clair);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 420px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.mission-img-placeholder,
+.histoire-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  background: var(--rose-pale);
+  border: 2px dashed var(--rose-vif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--rose-vif);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.hero-mission-photo img,
+.histoire-photo img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* ── Histoire ── */
+.histoire { padding: 80px 0; background: var(--gris-clair); }
+.histoire-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.histoire-text { display: flex; flex-direction: column; gap: 16px; }
+.histoire-text p { font-size: 0.92rem; color: var(--texte-clair); line-height: 1.8; }
+
+/* ── Valeurs ── */
+.valeurs-section { padding: 80px 0; background: var(--blanc); }
+.text-center { text-align: center; margin-bottom: 52px; }
+.valeurs-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.valeur-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 32px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #ececec;
+  transition: box-shadow var(--transition);
+}
+.valeur-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+
+.valeur-rond {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid transparent;
+  flex-shrink: 0;
+}
+.valeur-rond img { width: 55%; object-fit: contain; }
+.valeur-rond.rose       { background: #fce4e8; border-color: var(--rose-vif); }
+.valeur-rond.vert       { background: #c4dfc4; border-color: var(--vert-sauge); }
+.valeur-rond.rose-clair { background: var(--rose-pale); border-color: #f0aab8; }
+.valeur-rond.vert-clair { background: #d4ecd4; border-color: #7faa7f; }
+
+.valeur-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.valeur-card p { font-size: 0.84rem; color: var(--texte-clair); line-height: 1.6; }
+
+/* ── Chiffres ── */
+.chiffres { background: var(--vert-fonce); padding: 64px 0; }
+.chiffres-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.chiffre-item { display: flex; flex-direction: column; gap: 8px; }
+.chiffre-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--blanc);
+}
+.chiffre-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aecfc5;
+}
+
+/* ── CTA ── */
+.cta-section { background: var(--rose-pale); padding: 72px 0; }
+.cta-inner { text-align: center; }
+.cta-inner h2 { margin-bottom: 14px; }
+.cta-inner p { font-size: 0.95rem; color: var(--texte-clair); margin-bottom: 32px; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-mission { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; text-align: center; }
+  .hero-mission-text p { max-width: 100%; }
+  .hero-btns { justify-content: center; }
+  .histoire { padding: 48px 0; }
+  .histoire-inner { grid-template-columns: 1fr; gap: 32px; }
+  .valeurs-cards { grid-template-columns: 1fr 1fr; }
+  .chiffres-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .valeurs-section { padding: 48px 0; }
+}
+@media (max-width: 520px) {
+  .valeurs-cards { grid-template-columns: 1fr; }
+  .chiffres-grid { grid-template-columns: 1fr 1fr; }
+}

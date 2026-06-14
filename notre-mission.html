@@ -4,43 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notre Mission — Village des Femmes</title>
-  <link rel="stylesheet" href="notre-mission.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="notre-mission.css" />
 </head>
 <body>
 
-  <!-- ══ HEADER ══ -->
   <header class="site-header">
-    <nav class="nav-wrapper" aria-label="Navigation principale">
+    <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
+    <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <!-- Remplace src par ton logo -->
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="main-nav" id="main-nav">
-        <li><a href="index.html" >Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="notre-mission.html" class="active">Notre Mission</a></li>
         <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
         <li><a href="evenements.html">Événements</a></li>
-        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li class="nav-btn"><a href="nous-soutenir.html">Nous Soutenir</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-   <!-- ══ FOOTER ══ -->
+  <!-- ══ HERO ══ -->
+  <section class="hero-mission">
+    <div class="hero-mission-text">
+      <span class="section-tag">Qui sommes-nous</span>
+      <h1>Notre <span class="highlight">mission</span></h1>
+      <p>
+        Fondée sur les valeurs de solidarité, de bienveillance et de respect,
+        le Village des Femmes s'engage chaque jour auprès des femmes
+        qui en ont le plus besoin.
+      </p>
+      <div class="hero-btns">
+        <a href="aide-accompagnement.html" class="btn btn-noir">Demander de l'aide</a>
+        <a href="nous-soutenir.html" class="btn btn-outline-rose">Nous soutenir</a>
+      </div>
+    </div>
+    <div class="hero-mission-photo">
+      <div class="mission-img-placeholder">
+        <!-- <img src="images/mission-hero.jpg" alt="Notre équipe"> -->
+        <span>Photo de l'équipe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NOTRE HISTOIRE ══ -->
+  <section class="histoire">
+    <div class="container histoire-inner">
+      <div class="histoire-photo">
+        <div class="histoire-img-placeholder">
+          <!-- <img src="images/histoire.jpg" alt="Histoire de l'association"> -->
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="histoire-text">
+        <span class="section-tag">Notre histoire</span>
+        <h2>Née d'un besoin, portée par une communauté</h2>
+        <p>
+          Le Village des Femmes a été créé en réponse à un constat simple :
+          trop de femmes se retrouvent seules face à des situations difficiles,
+          sans savoir vers qui se tourner.
+        </p>
+        <p>
+          Depuis notre création, nous avons accompagné des centaines de femmes
+          dans leurs démarches, en les entourant d'une équipe bienveillante
+          de professionnels et de bénévoles engagés.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NOS VALEURS ══ -->
+  <section class="valeurs-section">
+    <div class="container">
+      <h2 class="text-center">Nos valeurs fondamentales</h2>
+      <div class="valeurs-cards">
+        <div class="valeur-card">
+          <div class="valeur-rond rose">
+            <!-- <img src="images/icone-bienveillance.png" alt=""> -->
+          </div>
+          <h3>Bienveillance</h3>
+          <p>Chaque femme est accueillie sans jugement, dans un espace de confiance et de sécurité.</p>
+        </div>
+        <div class="valeur-card">
+          <div class="valeur-rond vert">
+            <!-- <img src="images/icone-solidarite.png" alt=""> -->
+          </div>
+          <h3>Solidarité</h3>
+          <p>Nous croyons à la force du collectif et à l'entraide entre femmes pour surmonter les épreuves.</p>
+        </div>
+        <div class="valeur-card">
+          <div class="valeur-rond rose-clair">
+            <!-- <img src="images/icone-respect.png" alt=""> -->
+          </div>
+          <h3>Respect</h3>
+          <p>Chaque parcours est unique. Nous respectons les choix et le rythme de chaque femme accompagnée.</p>
+        </div>
+        <div class="valeur-card">
+          <div class="valeur-rond vert-clair">
+            <!-- <img src="images/icone-engagement.png" alt=""> -->
+          </div>
+          <h3>Engagement</h3>
+          <p>Nos bénévoles et salariés s'investissent avec cœur pour offrir un accompagnement de qualité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHIFFRES CLÉS ══ -->
+  <section class="chiffres">
+    <div class="container chiffres-grid">
+      <div class="chiffre-item">
+        <span class="chiffre-nombre">+500</span>
+        <span class="chiffre-label">Femmes accompagnées</span>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-nombre">30</span>
+        <span class="chiffre-label">Bénévoles engagés</span>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-nombre">10</span>
+        <span class="chiffre-label">Années d'existence</span>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-nombre">12</span>
+        <span class="chiffre-label">Ateliers par mois</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Vous souhaitez nous rejoindre ?</h2>
+      <p>Que vous souhaitiez faire un don, devenir bénévole ou simplement en savoir plus, nous sommes là.</p>
+      <div class="cta-btns">
+        <a href="nous-soutenir.html" class="btn btn-rose">Nous soutenir</a>
+        <a href="contact.html" class="btn btn-outline-vert">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village des Femmes</span>
-        <p class="footer-bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="footer-bio">Association d'aide, d'écoute et d'accompagnement des femmes en situation de vulnérabilité.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -56,29 +171,26 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-          <li><a href="#">Ressource 4</a></li>
-          <li><a href="#">Ressource 5</a></li>
-          <li><a href="#">Ressource 6</a></li>
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
+          <li><a href="#">Droits des femmes</a></li>
+          <li><a href="#">Hébergement d'urgence</a></li>
+          <li><a href="#">Aide juridictionnelle</a></li>
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Téléphone</a></li>
-          <li><a href="#">Adresse</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
+          <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2024 Village des Femmes — Tous droits réservés
-    </div>
+    <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
 
   <script src="main.js"></script>

@@ -1,3 +1,185 @@
-/*=======================================================
-=  CONTACT CSS FILE  = style spécifique pour la page contact.html
-=======================================================*/
+/* ============================================
+   CONTACT — Styles spécifiques
+   ============================================ */
+
+.contact-section { padding: 80px 0; background: var(--blanc); }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── Formulaire ── */
+.formulaire-wrap h2 { margin-bottom: 8px; }
+.form-note {
+  font-size: 0.83rem;
+  color: var(--texte-clair);
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--texte);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  color: var(--texte);
+  outline: none;
+  transition: border-color var(--transition);
+  background: var(--blanc);
+  width: 100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--rose-vif);
+}
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-group select { cursor: pointer; }
+
+.form-group-full { grid-column: 1 / -1; }
+
+.form-check {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+.form-check input[type="checkbox"] {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--rose-vif);
+  cursor: pointer;
+}
+.form-check label {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--texte-clair);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form-check label a { color: var(--rose-vif); text-decoration: underline; }
+
+.btn-submit { margin-top: 8px; padding: 14px 40px; font-size: 0.85rem; }
+
+.form-success {
+  margin-top: 16px;
+  padding: 14px 20px;
+  background: #e8f5e9;
+  border-radius: var(--radius);
+  color: #2e7d32;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid #a5d6a7;
+}
+
+/* ── Infos de contact ── */
+.contact-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-infos h2 { margin-bottom: 4px; }
+
+.info-bloc {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.info-icone {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+.info-icone.rose { background: #fce4e8; border-color: var(--rose-vif); }
+.info-icone.vert { background: #d4ecd4; border-color: var(--vert-sauge); }
+
+.info-bloc h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texte);
+  margin-bottom: 4px;
+}
+.info-bloc p {
+  font-size: 0.88rem;
+  color: var(--texte-clair);
+  line-height: 1.6;
+}
+.info-bloc a { color: var(--rose-vif); transition: color var(--transition); }
+.info-bloc a:hover { color: var(--rose-bouton); }
+.info-small { font-size: 0.78rem; color: #999; }
+
+/* Réseaux sociaux */
+.reseaux h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.reseaux-liens { display: flex; gap: 10px; flex-wrap: wrap; }
+.reseau-btn {
+  padding: 8px 18px;
+  border: 2px solid var(--rose-vif);
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--rose-vif);
+  transition: all var(--transition);
+}
+.reseau-btn:hover { background: var(--rose-vif); color: var(--blanc); }
+
+/* Urgence rappel */
+.urgence-rappel {
+  background: #fff3f5;
+  border: 2px solid var(--rose-vif);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.urgence-rappel p {
+  font-size: 0.85rem;
+  color: var(--texte);
+  line-height: 1.6;
+}
+.urgence-rappel strong { color: var(--rose-vif); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .contact-section { padding: 48px 0; }
+}

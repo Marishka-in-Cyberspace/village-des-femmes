@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Village des Femmes</title>
-  <link rel="stylesheet" href="contact.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
 </head>
 <body>
 
-  <!-- ══ HEADER ══ -->
   <header class="site-header">
-    <nav class="nav-wrapper" aria-label="Navigation principale">
+    <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
+    <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <!-- Remplace src par ton logo -->
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -25,22 +24,142 @@
         <li><a href="notre-mission.html">Notre Mission</a></li>
         <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
         <li><a href="evenements.html">Événements</a></li>
-        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
-        <li><a href="contact.html"  class="active">Contact</a></li>
+        <li class="nav-btn"><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-   <!-- ══ FOOTER ══ -->
+  <!-- ══ HERO ══ -->
+  <section class="hero-page">
+    <span class="section-tag">Nous sommes là</span>
+    <h1>Nous <span class="highlight">contacter</span></h1>
+    <p>
+      Vous avez une question, besoin d'aide ou souhaitez nous rejoindre ?
+      Écrivez-nous, nous vous répondons dans les plus brefs délais.
+    </p>
+  </section>
+
+  <!-- ══ CONTENU CONTACT ══ -->
+  <section class="contact-section">
+    <div class="container contact-inner">
+
+      <!-- Formulaire -->
+      <div class="formulaire-wrap">
+        <h2>Envoyez-nous un message</h2>
+        <p class="form-note">Toutes les demandes sont traitées avec confidentialité.</p>
+
+        <div class="form-group">
+          <label for="prenom">Prénom *</label>
+          <input type="text" id="prenom" placeholder="Votre prénom" />
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" placeholder="Votre nom" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="votre@email.fr" />
+        </div>
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" placeholder="06 XX XX XX XX" />
+        </div>
+        <div class="form-group">
+          <label for="sujet">Sujet *</label>
+          <select id="sujet">
+            <option value="">Choisissez un sujet…</option>
+            <option>Demande d'aide ou d'accompagnement</option>
+            <option>Devenir bénévole</option>
+            <option>Faire un don</option>
+            <option>Partenariat / Presse</option>
+            <option>Autre question</option>
+          </select>
+        </div>
+        <div class="form-group form-group-full">
+          <label for="message">Message *</label>
+          <textarea id="message" rows="5" placeholder="Votre message…"></textarea>
+        </div>
+        <div class="form-group form-group-full form-check">
+          <input type="checkbox" id="rgpd" />
+          <label for="rgpd">
+            J'accepte que mes données soient utilisées pour traiter ma demande,
+            conformément à la <a href="#">politique de confidentialité</a>.
+          </label>
+        </div>
+        <button type="button" class="btn btn-rose btn-submit" id="btn-submit">
+          Envoyer le message
+        </button>
+        <p class="form-success" id="form-success" hidden>
+          ✅ Votre message a bien été envoyé ! Nous vous répondrons rapidement.
+        </p>
+      </div>
+
+      <!-- Infos de contact -->
+      <div class="contact-infos">
+        <h2>Nos coordonnées</h2>
+
+        <div class="info-bloc">
+          <div class="info-icone rose">📍</div>
+          <div>
+            <h3>Adresse</h3>
+            <p>12 rue des Lilas<br>75015 Paris</p>
+          </div>
+        </div>
+
+        <div class="info-bloc">
+          <div class="info-icone vert">📞</div>
+          <div>
+            <h3>Téléphone</h3>
+            <p><a href="tel:+33100000000">01 XX XX XX XX</a></p>
+            <p class="info-small">Lun–Ven · 9h00–17h00</p>
+          </div>
+        </div>
+
+        <div class="info-bloc">
+          <div class="info-icone rose">✉️</div>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></p>
+          </div>
+        </div>
+
+        <div class="info-bloc">
+          <div class="info-icone vert">🕐</div>
+          <div>
+            <h3>Horaires d'accueil</h3>
+            <p>Lundi : 9h–12h · 14h–17h</p>
+            <p>Mardi : 9h–12h</p>
+            <p>Mercredi : 14h–17h</p>
+            <p>Jeudi : 9h–12h · 14h–17h</p>
+            <p>Vendredi : 9h–12h</p>
+          </div>
+        </div>
+
+        <div class="reseaux">
+          <h3>Suivez-nous</h3>
+          <div class="reseaux-liens">
+            <a href="#" class="reseau-btn">Facebook</a>
+            <a href="#" class="reseau-btn">Instagram</a>
+            <a href="#" class="reseau-btn">LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- Urgence -->
+        <div class="urgence-rappel">
+          <p>🆘 En cas de danger immédiat, appelez le <strong>17</strong> (Police) ou le <strong>3919</strong> (Violences Femmes Info)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village des Femmes</span>
-        <p class="footer-bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="footer-bio">Association d'aide, d'écoute et d'accompagnement des femmes en situation de vulnérabilité.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -56,29 +175,26 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-          <li><a href="#">Ressource 4</a></li>
-          <li><a href="#">Ressource 5</a></li>
-          <li><a href="#">Ressource 6</a></li>
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
+          <li><a href="#">Droits des femmes</a></li>
+          <li><a href="#">Hébergement d'urgence</a></li>
+          <li><a href="#">Aide juridictionnelle</a></li>
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Téléphone</a></li>
-          <li><a href="#">Adresse</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
+          <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2024 Village des Femmes — Tous droits réservés
-    </div>
+    <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
 
   <script src="main.js"></script>

@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aide & Accompagnement — Village des Femmes</title>
-  <link rel="stylesheet" href="aide-accompagnement.css" />
+  <title>Aide &amp; Accompagnement — Village des Femmes</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="aide-accompagnement.css" />
 </head>
 <body>
 
-   <!-- ══ HEADER ══ -->
   <header class="site-header">
-    <nav class="nav-wrapper" aria-label="Navigation principale">
+    <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
+    <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <!-- Remplace src par ton logo -->
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -25,22 +24,165 @@
         <li><a href="notre-mission.html">Notre Mission</a></li>
         <li><a href="aide-accompagnement.html" class="active">Aide &amp; Accompagnement</a></li>
         <li><a href="evenements.html">Événements</a></li>
-        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li class="nav-btn"><a href="nous-soutenir.html">Nous Soutenir</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-   <!-- ══ FOOTER ══ -->
+  <!-- ══ HERO ══ -->
+  <section class="hero-page">
+    <span class="section-tag">Nous sommes là</span>
+    <h1>Aide &amp; <span class="highlight">Accompagnement</span></h1>
+    <p>
+      Vous traversez une période difficile ? Notre équipe vous accompagne
+      avec écoute, bienveillance et confidentialité, sans jugement.
+    </p>
+    <a href="contact.html" class="btn btn-noir">Demander de l'aide</a>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section class="services">
+    <div class="container">
+      <h2 class="text-center-section">Nos accompagnements</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icone rose">
+            <!-- <img src="images/icone-ecoute.png" alt=""> -->
+          </div>
+          <h3>Écoute et soutien</h3>
+          <p>
+            Des écoutants formés disponibles pour vous accompagner lors de
+            permanences hebdomadaires. Un espace confidentiel pour parler librement.
+          </p>
+          <a href="contact.html" class="btn-service">Prendre rendez-vous →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone vert">
+            <!-- <img src="images/icone-juridique.png" alt=""> -->
+          </div>
+          <h3>Accompagnement juridique</h3>
+          <p>
+            Notre juriste bénévole vous aide à comprendre vos droits,
+            vous oriente dans vos démarches et vous accompagne si nécessaire.
+          </p>
+          <a href="contact.html" class="btn-service">Prendre rendez-vous →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone rose-clair">
+            <!-- <img src="images/icone-social.png" alt=""> -->
+          </div>
+          <h3>Accompagnement social</h3>
+          <p>
+            Aide aux démarches administratives, accès aux droits, logement,
+            emploi : nous vous accompagnons pas à pas vers plus d'autonomie.
+          </p>
+          <a href="contact.html" class="btn-service">Prendre rendez-vous →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone vert-clair">
+            <!-- <img src="images/icone-psy.png" alt=""> -->
+          </div>
+          <h3>Soutien psychologique</h3>
+          <p>
+            Des séances individuelles avec notre psychologue bénévole,
+            dans un cadre sécurisé et bienveillant.
+          </p>
+          <a href="contact.html" class="btn-service">Prendre rendez-vous →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone rose">
+            <!-- <img src="images/icone-ateliers.png" alt=""> -->
+          </div>
+          <h3>Ateliers collectifs</h3>
+          <p>
+            Ateliers bien-être, confiance en soi, création, cuisine…
+            Des moments de partage pour briser l'isolement et recréer du lien.
+          </p>
+          <a href="evenements.html" class="btn-service">Voir les ateliers →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone vert">
+            <!-- <img src="images/icone-urgence.png" alt=""> -->
+          </div>
+          <h3>Orientation urgente</h3>
+          <p>
+            En situation d'urgence, nous vous orientons vers les bons
+            interlocuteurs et structures d'hébergement ou de protection.
+          </p>
+          <a href="contact.html" class="btn-service">Nous contacter →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COMMENT ÇA MARCHE ══ -->
+  <section class="comment">
+    <div class="container">
+      <h2 class="text-center-section">Comment ça marche ?</h2>
+      <div class="etapes">
+        <div class="etape">
+          <div class="etape-num">1</div>
+          <h3>Vous nous contactez</h3>
+          <p>Par téléphone, email ou formulaire — en toute confidentialité.</p>
+        </div>
+        <div class="etape-fleche">→</div>
+        <div class="etape">
+          <div class="etape-num">2</div>
+          <h3>Nous échangeons</h3>
+          <p>Un premier entretien pour comprendre votre situation et vos besoins.</p>
+        </div>
+        <div class="etape-fleche">→</div>
+        <div class="etape">
+          <div class="etape-num">3</div>
+          <h3>On construit ensemble</h3>
+          <p>Un accompagnement personnalisé, à votre rythme, selon vos besoins.</p>
+        </div>
+      </div>
+      <div class="comment-cta">
+        <a href="contact.html" class="btn btn-rose">Commencer maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NUMÉROS D'URGENCE ══ -->
+  <section class="urgences">
+    <div class="container">
+      <h2 class="text-center-section">En cas d'urgence</h2>
+      <div class="urgences-grid">
+        <div class="urgence-card">
+          <span class="urgence-numero">3919</span>
+          <span class="urgence-label">Violences Femmes Info<br><small>24h/24 · Gratuit · Anonyme</small></span>
+        </div>
+        <div class="urgence-card">
+          <span class="urgence-numero">115</span>
+          <span class="urgence-label">SAMU Social<br><small>Hébergement d'urgence</small></span>
+        </div>
+        <div class="urgence-card">
+          <span class="urgence-numero">17</span>
+          <span class="urgence-label">Police Secours<br><small>Danger immédiat</small></span>
+        </div>
+        <div class="urgence-card">
+          <span class="urgence-numero">15</span>
+          <span class="urgence-label">SAMU<br><small>Urgence médicale</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village des Femmes</span>
-        <p class="footer-bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="footer-bio">Association d'aide, d'écoute et d'accompagnement des femmes en situation de vulnérabilité.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -56,29 +198,26 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-          <li><a href="#">Ressource 4</a></li>
-          <li><a href="#">Ressource 5</a></li>
-          <li><a href="#">Ressource 6</a></li>
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
+          <li><a href="#">Droits des femmes</a></li>
+          <li><a href="#">Hébergement d'urgence</a></li>
+          <li><a href="#">Aide juridictionnelle</a></li>
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Téléphone</a></li>
-          <li><a href="#">Adresse</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
+          <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2024 Village des Femmes — Tous droits réservés
-    </div>
+    <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
 
   <script src="main.js"></script>

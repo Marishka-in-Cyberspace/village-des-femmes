@@ -9,12 +9,11 @@
 </head>
 <body>
 
-  <!-- ══ HEADER ══ -->
   <header class="site-header">
-    <nav class="nav-wrapper" aria-label="Navigation principale">
+    <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
+    <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <!-- Remplace src par ton logo -->
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -23,9 +22,9 @@
       <ul class="main-nav" id="main-nav">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="notre-mission.html">Notre Mission</a></li>
-        <li><a href="aide-accompagnement.html" >Aide &amp; Accompagnement</a></li>
+        <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
         <li><a href="evenements.html">Événements</a></li>
-        <li><a href="nous-soutenir.html" class="active">Nous Soutenir</a></li>
+        <li class="nav-btn"><a href="nous-soutenir.html" class="active">Nous Soutenir</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -34,20 +33,22 @@
   <!-- ══ HERO ══ -->
   <section class="hero-soutenir">
     <div class="hero-content">
+      <span class="section-tag">Agir ensemble</span>
       <h1>Ensemble,<br><span class="highlight">faisons la différence</span></h1>
-      <p class="hero-desc">
-        Grâce à votre soutien, nous pouvons accueillir, écouter,
-        accompagner, et protéger chaque femme vers un avenir
-        plus serein et libre.
+      <p>
+        Grâce à votre soutien, nous pouvons accueillir, écouter, accompagner
+        et protéger chaque femme vers un avenir plus serein et libre.
       </p>
       <div class="hero-btns">
-        <a href="#faire-un-don" class="btn btn-rose">Faire un don</a>
-        <a href="contact.html" class="btn btn-outline-vert">Devenir bénévole</a>
+        <a href="#faire-un-don" class="btn btn-noir">Faire un don</a>
+        <a href="#benevole" class="btn btn-outline-vert">Devenir bénévole</a>
       </div>
     </div>
     <div class="hero-photo">
-      <!-- Remplace src par ta photo : ex. src="images/hero-soutenir.jpg" -->
-      <img src="images/hero-soutenir.jpg" alt="Photo de l'association" />
+      <div class="hero-soutenir-placeholder">
+        <!-- <img src="images/soutenir.jpg" alt=""> -->
+        <span>Photo</span>
+      </div>
     </div>
   </section>
 
@@ -58,35 +59,35 @@
       <div class="piliers-grid">
 
         <div class="pilier">
-          <div class="pilier-icon pilier-vert-clair">
-            <!-- Icône ou image : <img src="images/icone-accueil.png" alt=""> -->
+          <div class="pilier-icon vert-clair">
+            <!-- <img src="images/icone-accueil.png" alt=""> -->
           </div>
           <h3>Accueillir</h3>
           <p>Offrir un lieu sûr et bienveillant d'écoute et d'accompagnement</p>
         </div>
 
         <div class="pilier">
-          <div class="pilier-icon pilier-rose-pale">
+          <div class="pilier-icon rose-outline">
             <!-- <img src="images/icone-ecoute.png" alt=""> -->
           </div>
           <h3>Écouter et accompagner</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Être présentes à chaque étape du parcours de chaque femme</p>
         </div>
 
         <div class="pilier">
-          <div class="pilier-icon pilier-vert-clair">
+          <div class="pilier-icon vert-clair">
             <!-- <img src="images/icone-proteger.png" alt=""> -->
           </div>
           <h3>Protéger</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Défendre les droits et la sécurité des femmes accompagnées</p>
         </div>
 
         <div class="pilier">
-          <div class="pilier-icon pilier-rose-pale">
+          <div class="pilier-icon rose-pale">
             <!-- <img src="images/icone-lien.png" alt=""> -->
           </div>
           <h3>Créer du lien</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Briser l'isolement et tisser une communauté solidaire et chaleureuse</p>
         </div>
 
       </div>
@@ -95,36 +96,61 @@
 
   <!-- ══ FAIRE UN DON ══ -->
   <section class="faire-un-don" id="faire-un-don">
-    <div class="don-card">
-      <h2>Faire un don</h2>
-      <p>
-        Votre don aide à poursuivre et développer nos actions.
-        Chaque contribution soutient concrètement les femmes
-        accompagnées par l'association.
-      </p>
-      <div class="montants">
-        <button class="montant-btn" data-montant="10">10€</button>
-        <button class="montant-btn active" data-montant="20">20€</button>
-        <button class="montant-btn" data-montant="50">50€</button>
-        <button class="montant-btn autre" id="btn-autre">Autre montant</button>
+    <div class="container">
+      <div class="don-card">
+        <h2>Faire un don</h2>
+        <p>
+          Votre don aide à poursuivre et développer nos actions.
+          Chaque contribution soutient concrètement les femmes accompagnées par l'association.
+        </p>
+        <div class="montants">
+          <button class="montant-btn" data-montant="10">10€</button>
+          <button class="montant-btn active" data-montant="20">20€</button>
+          <button class="montant-btn" data-montant="50">50€</button>
+          <button class="montant-btn autre" id="btn-autre">Autre montant</button>
+        </div>
+        <div class="autre-montant-wrap" id="autre-wrap" hidden>
+          <input type="number" id="montant-libre" placeholder="Votre montant (€)" min="1" />
+        </div>
+        <a href="#" class="btn btn-rose btn-don" id="btn-don">Je fais un don</a>
+        <p class="don-note">🔒 Paiement sécurisé · Reçu fiscal disponible</p>
       </div>
-      <div class="autre-montant-wrap" id="autre-wrap" hidden>
-        <input type="number" id="montant-libre" placeholder="Votre montant (€)" min="1" />
-      </div>
-      <a href="#" class="btn btn-rose btn-don" id="btn-don">Je fais un don</a>
     </div>
   </section>
 
-  <!-- ══ FOOTER ══ -->
+  <!-- ══ DEVENIR BÉNÉVOLE ══ -->
+  <section class="benevole-section" id="benevole">
+    <div class="container benevole-inner">
+      <div class="benevole-text">
+        <span class="section-tag">Engagement</span>
+        <h2>Devenir bénévole</h2>
+        <p>
+          Vous souhaitez donner de votre temps pour soutenir les femmes accompagnées
+          par l'association ? Rejoignez notre équipe de bénévoles engagés et formés.
+        </p>
+        <ul class="benevole-liste">
+          <li>✦ Accompagnement administratif et social</li>
+          <li>✦ Animations d'ateliers et sorties</li>
+          <li>✦ Soutien juridique ou psychologique</li>
+          <li>✦ Communication et événements</li>
+        </ul>
+        <a href="contact.html" class="btn btn-vert">Je veux m'engager</a>
+      </div>
+      <div class="benevole-photo">
+        <div class="benevole-placeholder">
+          <!-- <img src="images/benevoles.jpg" alt="Nos bénévoles"> -->
+          <span>Photo équipe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village des Femmes</span>
-        <p class="footer-bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="footer-bio">Association d'aide, d'écoute et d'accompagnement des femmes en situation de vulnérabilité.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -140,29 +166,26 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="#">Ressource 1</a></li>
-          <li><a href="#">Ressource 2</a></li>
-          <li><a href="#">Ressource 3</a></li>
-          <li><a href="#">Ressource 4</a></li>
-          <li><a href="#">Ressource 5</a></li>
-          <li><a href="#">Ressource 6</a></li>
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
+          <li><a href="#">Droits des femmes</a></li>
+          <li><a href="#">Hébergement d'urgence</a></li>
+          <li><a href="#">Aide juridictionnelle</a></li>
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Téléphone</a></li>
-          <li><a href="#">Adresse</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
+          <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2024 Village des Femmes — Tous droits réservés
-    </div>
+    <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
 
   <script src="main.js"></script>

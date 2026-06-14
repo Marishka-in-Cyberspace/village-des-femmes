@@ -46,8 +46,6 @@ Ces pages sont référencées dans la navigation mais pas encore créées :
 - `contact.html`
 - `benevole.html`
 
-UPDATE : Ces pages ont bien été crées et mises à jour avec header et footer
-
 Pour chaque nouvelle page : copie la structure de `index.html`
 (header + footer), crée un `.css` dédié, et remplace uniquement
 la section `<main>` entre le header et le footer.
