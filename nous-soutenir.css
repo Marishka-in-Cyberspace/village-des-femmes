@@ -1,0 +1,207 @@
+/* ============================================
+   NOUS SOUTENIR — Styles spécifiques
+   ============================================ */
+
+/* ── Hero ── */
+.hero-soutenir {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 420px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  gap: 60px;
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+}
+.hero-content .hero-desc {
+  font-size: 0.95rem;
+  color: var(--texte-clair);
+  max-width: 380px;
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--gris-clair);
+  /* placeholder visuel si pas d'image */
+  min-height: 200px;
+}
+
+/* ── Pourquoi ── */
+.pourquoi {
+  background: var(--blanc);
+  padding: 72px 0;
+  text-align: center;
+}
+.pourquoi h2 {
+  margin-bottom: 52px;
+}
+
+.piliers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.pilier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.pilier-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.pilier-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.pilier-vert-clair { background: #c4dfc4; }
+.pilier-rose-outline {
+  background: transparent;
+  border: 3px solid var(--rose-vif);
+  /* Centre sans fond */
+  background: #fce4e8;
+}
+.pilier-rose-pale { background: var(--rose-pale); }
+
+.pilier h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--texte);
+}
+.pilier p {
+  font-size: 0.82rem;
+  color: var(--texte-clair);
+  line-height: 1.6;
+}
+
+/* ── Faire un don ── */
+.faire-un-don {
+  background: var(--rose-pale);
+  padding: 56px 40px;
+}
+.don-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--rose-pale);
+}
+.don-card h2 {
+  margin-bottom: 14px;
+  color: var(--texte);
+}
+.don-card > p {
+  font-size: 0.9rem;
+  color: var(--texte-clair);
+  margin-bottom: 28px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.montants {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.montant-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 2px solid var(--rose-vif);
+  background: var(--blanc);
+  color: var(--texte);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.montant-btn.active,
+.montant-btn:hover {
+  background: var(--rose-vif);
+  color: var(--blanc);
+}
+.montant-btn.autre {
+  border-color: #ccc;
+  color: var(--texte-clair);
+}
+.montant-btn.autre:hover {
+  border-color: var(--rose-vif);
+  background: var(--rose-pale);
+  color: var(--texte);
+}
+
+.autre-montant-wrap {
+  margin-bottom: 20px;
+}
+.autre-montant-wrap input {
+  padding: 10px 18px;
+  border: 2px solid var(--rose-vif);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  outline: none;
+  width: 200px;
+}
+.autre-montant-wrap input:focus { border-color: var(--rose-bouton); }
+
+.btn-don {
+  margin-top: 6px;
+  padding: 14px 36px;
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-soutenir {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+  .hero-content .hero-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
+  .hero-photo img { max-width: 320px; margin: 0 auto; }
+
+  .piliers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .pourquoi { padding: 48px 20px; }
+}
+
+@media (max-width: 520px) {
+  .piliers-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .faire-un-don { padding: 40px 20px; }
+  .montants { gap: 8px; }
+}

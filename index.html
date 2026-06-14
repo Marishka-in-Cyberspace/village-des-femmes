@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil — Village des Femmes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <nav class="nav-wrapper" aria-label="Navigation principale">
+      <a href="index.html" class="logo">
+        <!-- Remplace src par ton logo -->
+        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <span class="logo-text">Village<br>des Femmes</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="main-nav" id="main-nav">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="notre-mission.html">Notre Mission</a></li>
+        <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-accueil">
+    <div class="hero-text">
+      <span class="section-tag">Un lieu d'écoute, de soutien de reconstruction pour les femmes</span>
+      <h1 class="hero-titre">Vous n'êtes pas seule, nous sommes là.</h1>
+      <p class="hero-desc">
+       Le Village des Femmes accueille, écoute, informe et accompagne chaque femme vers un avenir plus serein et libre.</p>
+      <div class="hero-btns">
+        <a href="aide-accompagnement.html" class="btn btn-rose">Demander de l'aide</a>
+        <a href="notre-mission.html" class="btn btn-outline-vert">En savoir plus</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Remplace src par ta photo principale -->
+      <img src="images/hero-accueil.jpg" alt="Équipe Village des Femmes" />
+    </div>
+  </section>
+
+  <!-- ══ ICÔNES / VALEURS ══ -->
+  <section class="valeurs">
+    <div class="container valeurs-grid">
+
+      <div class="valeur-item valeur-vert">
+        <div class="valeur-icone">
+          <!-- <img src="images/icone-1.png" alt=""> -->
+        </div>
+        <span class="valeur-label">Bienveillance</span>
+      </div>
+
+      <div class="valeur-item valeur-rose">
+        <div class="valeur-icone">
+          <!-- <img src="images/icone-2.png" alt=""> -->
+        </div>
+        <span class="valeur-label">Respect</span>
+      </div>
+
+      <div class="valeur-item valeur-vert">
+        <div class="valeur-icone">
+          <!-- <img src="images/icone-3.png" alt=""> -->
+        </div>
+        <span class="valeur-label">Solidarité</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION MISSION (rose) ══ -->
+  <section class="mission-section">
+    <div class="mission-inner">
+      <div class="mission-photo">
+        <!--<img src="images/mission.jpg" alt="Notre mission">-->
+        <div class="mission-photo-placeholder">PHOTO</div>
+      </div>
+      <div class="mission-text">
+        <span class="section-tag">Notre mission</span>
+        <h2>Nos objectifs</h2>
+        <p>
+         Créer du lien, briser l’isolement et accompagner vers un nouveau départ.
+        </p>
+        <a href="notre-mission.html" class="btn btn-vert">Nos Missions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BANDEAU CITATION / VALEUR (vert foncé) ══ -->
+   
+  <section class="bandeau-vert">
+    <div class="container bandeau-inner">
+      <div class="bandeau-icone">
+
+        <!-- <img src="images/icone-bandeau.png" alt=""> -->
+      </div>
+      <p class="bandeau-texte">VILLAGE DES FEMMES — Seule, une femme résiste. Ensemble, les femmes se reconstruisent et avancent.</p>
+    </div>
+  </section>
+
+  <!-- ══ ÉVÉNEMENTS À VENIR ══ -->
+  <section class="evenements">
+    <div class="container">
+      <div class="evenements-header">
+        <h2><span class="highlight">Événements à venir</span></h2>
+        <a href="evenements.html" class="voir-tous">Tous les événements… →</a>
+      </div>
+      <div class="evenements-grid">
+
+        <article class="event-card">
+          <div class="event-photo">
+            <!-- <img src="images/event1.jpg" alt="Événement 1"> -->
+            <div class="event-photo-placeholder">PHOTO1</div>
+          </div>
+          <div class="event-info">
+            <p>INFO1 — Date, lieu, description courte</p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-photo">
+            <!-- <img src="images/event2.jpg" alt="Événement 2"> -->
+            <div class="event-photo-placeholder">PHOTO2</div>
+          </div>
+          <div class="event-info">
+            <p>INFO2 — Date, lieu, description courte</p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-photo">
+            <!-- <img src="images/event3.jpg" alt="Événement 3"> -->
+            <div class="event-photo-placeholder">PHOTO3</div>
+          </div>
+          <div class="event-info">
+            <p>INFO3 — Date, lieu, description courte</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <span class="logo-text">Village des Femmes</span>
+        <p class="footer-bio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="notre-mission.html">Notre Mission</a></li>
+          <li><a href="aide-accompagnement.html">Aide &amp; Accompagnement</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Aide &amp; Ressources</h4>
+        <ul>
+          <li><a href="#">Ressource 1</a></li>
+          <li><a href="#">Ressource 2</a></li>
+          <li><a href="#">Ressource 3</a></li>
+          <li><a href="#">Ressource 4</a></li>
+          <li><a href="#">Ressource 5</a></li>
+          <li><a href="#">Ressource 6</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nous Contacter</h4>
+        <ul>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Téléphone</a></li>
+          <li><a href="#">Adresse</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Village des Femmes — Tous droits réservés
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
