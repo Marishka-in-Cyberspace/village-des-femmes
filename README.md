@@ -4,51 +4,47 @@
 
 ```
 village-des-femmes/
-├── index.html          ← Page Accueil
-├── index.css           ← Styles spécifiques à l'accueil
-├── nous-soutenir.html  ← Page Nous Soutenir
-├── nous-soutenir.css   ← Styles spécifiques à Nous Soutenir
-├── styles.css          ← Styles communs (header, footer, boutons…)
-├── main.js             ← JavaScript commun
-└── images/             ← Dossier à créer avec tes images
+├── index.html               ← Page Accueil
+├── index.css                ← Styles spécifiques à l'accueil
+├── nous-soutenir.html       ← Page Nous Soutenir
+├── nous-soutenir.css        ← Styles spécifiques à Nous Soutenir
+├── aide-accompagnement.html ← Page aide & accompagnement
+├── aide-accompagnement.css  ←  Styles spé à la page aide & accompagnement
+├── notre-mission.html       ←  Page Notre Mission
+├── nore-mission.css         ← Styles spé à la page notre mission
+├── contact.html             ←  Page Contact
+├── contact.css              ←  Styles spé à la page contact 
+├── evenements.html          ←  Page evenements
+├── evenements.css           ←  Styles spé à la page événements
+├── styles.css               ← Styles communs (header, footer, boutons…)
+├── main.js                  ← JavaScript commun
+└── images/                  ← Dossier à créer avec tes images
     ├── logo.png
-    ├── hero-accueil.jpg
-    ├── hero-soutenir.jpg
-    ├── mission.jpg
-    ├── event1.jpg
-    ├── event2.jpg
-    └── event3.jpg
-```
 
-## Comment ajouter tes images
+    Les images sont à rajouter encore, il n'y a pour l'instant que le logo 
 
-1. Crée un dossier `images/` à côté des fichiers HTML
-2. Place tes fichiers avec les noms indiqués ci-dessus
-   (ou change les `src="..."` dans le HTML selon tes noms de fichiers)
-3. Le logo doit être en PNG avec fond transparent si possible
 
-## Palette de couleurs
+## Ajouter des images png idéalement pour les icônes. Photos en jpeg ok 
 
-| Nom         | Code hex  | Utilisation                    |
-|-------------|-----------|--------------------------------|
-| Rose pâle   | `#F9D6D8` | Fonds de sections              |
-| Rose vif    | `#E75480` | Boutons, accents, liens actifs |
-| Vert sauge  | `#8FBC8F` | Icônes secondaires             |
-| Vert foncé  | `#3D6B5C` | Footer, bandeau                |
-| Blanc       | `#FFFFFF` | Fond principal                 |
+## Palette de couleurs 
+
+| Nom         | Code hex  | 
+|-------------|-----------|
+  --rose-pale:    #F9D6D8; 
+  --rose-vif:     #E75480;
+  --rose-bouton:  #C8455A;
+  --vert-sauge:   #8FBC8F;
+  --vert-fonce:   #3D6B5C;
+  --vert-btn:     #4A8A75;
+  --noir:         #1a1a1a;
+  --blanc:        #FFFFFF;
+  --gris-clair:   #F5F5F5;
+  --texte:        #2C2C2C;
+  --texte-clair:  #666666;
 
 ## Pages supplémentaires à créer
 
-Ces pages sont référencées dans la navigation mais pas encore créées :
-- `notre-mission.html`
-- `aide-accompagnement.html`
-- `evenements.html`
-- `contact.html`
-- `benevole.html`
-
-Pour chaque nouvelle page : copie la structure de `index.html`
-(header + footer), crée un `.css` dédié, et remplace uniquement
-la section `<main>` entre le header et le footer.
+UPDATE: toutesles pages sont crées, et remplies
 
 ## Lien de don
 
@@ -57,9 +53,14 @@ Remplace `#don-${montantSelectionne}` par l'URL de ta plateforme :
 - **HelloAsso** : `https://www.helloasso.com/associations/ton-asso/formulaires/don?montant=...`
 - **PayPal** : `https://www.paypal.com/donate/?amount=...`
 - **Stripe** : selon ta configuration
+A FAIRE 
+compte asso à creer, il n'y a encore aucun compte de con pour l'asso
 
 ## Polices
 
-Le site utilise Google Fonts (chargées automatiquement) :
+Le site utilise Google Fonts:
 - **Playfair Display** — titres
 - **Lato** — corps de texte
+
+14/06/26 CSS changé, body ajouté aux pages "notre mission" "aide et accompagnement""evenemensts""contact"
+15/06/26 Modif du read me et du texte de certaines pages html 

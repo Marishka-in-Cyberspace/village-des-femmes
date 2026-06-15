@@ -147,7 +147,7 @@ h3 { font-size: 1.1rem; }
   transform: translateY(-1px);
 }
 .main-nav .nav-btn a.active {
-  background: var(--noir);
+  background: var(--rose-vif);
   color: var(--blanc);
   border-bottom: none;
 }
