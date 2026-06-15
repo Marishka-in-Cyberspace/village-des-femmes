@@ -20,6 +20,7 @@ if (burger && mainNav) {
 }
 
 // ── Boutons montants (page Nous Soutenir) ──
+
 const montantBtns = document.querySelectorAll('.montant-btn:not(.autre)');
 const btnAutre    = document.getElementById('btn-autre');
 const autreWrap   = document.getElementById('autre-wrap');
@@ -62,6 +63,7 @@ if (btnDon) {
 }
 
 // ── Formulaire contact (simulation) ──
+
 const btnSubmit  = document.getElementById('btn-submit');
 const formSuccess = document.getElementById('form-success');
 
