@@ -88,3 +88,40 @@ if (btnSubmit && formSuccess) {
     btnSubmit.style.background = '#4A8A75';
   });
 }
+
+  // ── Molette de navigation (scroll haut / bas) ──
+const scrollTopBtn    = document.getElementById('scroll-top');
+const scrollBottomBtn = document.getElementById('scroll-bottom');
+
+if (scrollTopBtn && scrollBottomBtn) {
+  const toggleScrollBtns = () => {
+    const scrollY = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Affiche les boutons seulement après un petit scroll
+    if (scrollY > 200) {
+      scrollTopBtn.classList.add('visible');
+      scrollBottomBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+      scrollBottomBtn.classList.remove('visible');
+    }
+
+    // Cache le bouton "bas" si on est déjà en bas de page
+    if (scrollY >= maxScroll - 10) {
+      scrollBottomBtn.classList.add('at-bottom');
+    } else {
+      scrollBottomBtn.classList.remove('at-bottom');
+    }
+  };
+
+  window.addEventListener('scroll', toggleScrollBtns);
+  toggleScrollBtns();
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  scrollBottomBtn.addEventListener('click', () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  });
+}

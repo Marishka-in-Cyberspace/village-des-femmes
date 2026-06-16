@@ -147,7 +147,7 @@ h3 { font-size: 1.1rem; }
   transform: translateY(-1px);
 }
 .main-nav .nav-btn a.active {
-  background: var(--rose-vif);
+  background: var(--noir);
   color: var(--blanc);
   border-bottom: none;
 }
@@ -346,4 +346,52 @@ h3 { font-size: 1.1rem; }
 
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════
+   MOLETTE DE NAVIGATION (haut / bas)
+══════════════════════════════════ */
+.scroll-nav {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scroll-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blanc);
+  border: 2px solid var(--rose-vif);
+  color: var(--rose-vif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: all var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+}
+.scroll-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-btn:hover {
+  background: var(--rose-vif);
+  color: var(--blanc);
+}
+.scroll-btn svg { width: 18px; height: 18px; }
+
+/* En bas de page : bouton "haut" reste visible, bouton "bas" se cache */
+.scroll-btn.scroll-bottom.at-bottom { display: none; }
+
+@media (max-width: 600px) {
+  .scroll-nav { right: 14px; bottom: 14px; }
+  .scroll-btn { width: 40px; height: 40px; }
 }
