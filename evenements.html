@@ -13,7 +13,7 @@
     <div class="header-top">Village des Femmes — Association d'aide et d'accompagnement</div>
     <nav class="nav-wrapper">
       <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Logo Village des Femmes" />
+        <div class="logo-placeholder">VDF</div>
         <span class="logo-text">Village<br>des Femmes</span>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -40,32 +40,33 @@
     </p>
   </section>
 
-  <!-- ══ LISTE ÉVÉNEMENTS ══ -->
+  <!-- ══ LISTE ÉVÉNEMENTS À VENIR ══ -->
   <section class="liste-evenements">
     <div class="container">
+
+      <h2 class="sous-titre-section">Événements à venir</h2>
 
       <!-- Événement 1 -->
       <article class="evt-detail" id="evt1">
         <div class="evt-photo">
           <div class="evt-photo-placeholder">
-            <!-- <img src="images/event1.jpg" alt="Atelier bien-être"> -->
+            <!-- <img src="images/event1.jpg" alt="Atelier créatif"> -->
             <span>Photo 1</span>
           </div>
         </div>
         <div class="evt-contenu">
           <div class="evt-meta">
-            <span class="evt-date-badge">22 Juin</span>
+            <span class="evt-date-badge">19 Juil.</span>
             <span class="evt-type">Atelier</span>
           </div>
-          <h2>Événement 1</h2>
+          <h2>Nom de l'événement 1</h2>
           <div class="evt-infos">
-            <span>📅 jour date et heure </span>
+            <span>📅 jour - date - horaire </span>
             <span>📍 lieu et adresse</span>
-            <span>👤 payant ou gratuit/entrée libre ou sur inscription</span>
+            <span>👤 prix et public</span>
           </div>
           <p>
-          description de l'événement 1
-          mettre un paragraphe qui décrit l'événement, ce qu'il propose, les intervenants, le déroulement, etc.
+          descriptif de l'événement 1 
           </p>
           <a href="contact.html" class="btn btn-rose">S'inscrire</a>
         </div>
@@ -75,24 +76,23 @@
       <article class="evt-detail" id="evt2">
         <div class="evt-photo">
           <div class="evt-photo-placeholder">
-            <!-- <img src="images/event2.jpg" alt="Permanence juridique"> -->
+            <!-- <img src="images/event2.jpg" alt="Permanence sociale"> -->
             <span>Photo 2</span>
           </div>
         </div>
         <div class="evt-contenu">
           <div class="evt-meta">
-            <span class="evt-date-badge">25 Juin</span>
+            <span class="evt-date-badge">23 Juil.</span>
             <span class="evt-type">Permanence</span>
           </div>
-          <h2>Événement 2</h2>
+          <h2>Nom de l'événement 2</h2>
           <div class="evt-infos">
-            <span>📅 jour date et heure </span>
+            <span>📅 jour - date - horaire</span>
             <span>📍 lieu et adresse</span>
-            <span>👤 payant ou gratuit/entrée libre ou sur inscription</span>
+            <span>👤 prix et public</span>
           </div>
           <p>
             description de l'événement 2
-            mettre un paragraphe qui décrit l'événement, ce qu'il propose, les intervenants, le déroulement, etc.
           </p>
           <a href="contact.html" class="btn btn-rose">Prendre rendez-vous</a>
         </div>
@@ -102,29 +102,89 @@
       <article class="evt-detail" id="evt3">
         <div class="evt-photo">
           <div class="evt-photo-placeholder">
-            <!-- <img src="images/event3.jpg" alt="Café des femmes"> -->
+            <!-- <img src="images/event3.jpg" alt="Pique-nique solidaire"> -->
             <span>Photo 3</span>
           </div>
         </div>
         <div class="evt-contenu">
           <div class="evt-meta">
-            <span class="evt-date-badge">4 Juil.</span>
+            <span class="evt-date-badge">2 Août</span>
             <span class="evt-type">Rencontre</span>
           </div>
-          <h2>Événement 3</h2>
+          <h2>Nom de l'événement 3</h2>
           <div class="evt-infos">
-            <span>📅 jour date heure </span>
+            <span>📅 jour - date - horaire</span>
             <span>📍 lieu et adresse</span>
-            <span>👤 payant ou gratuit/entrée libre ou sur inscription</span>
+            <span>👤 prix et public</span>
           </div>
           <p>
             description de l'événement 3
-            mettre un paragraphe qui décrit l'événement, ce qu'il propose, les intervenants, le déroulement, etc.
           </p>
           <a href="contact.html" class="btn btn-rose">En savoir plus</a>
         </div>
       </article>
 
+    </div>
+  </section>
+
+  <!-- ══ ÉVÉNEMENTS PASSÉS ══ -->
+
+  <section class="evenements-passes" id="evenements-passes">
+    <div class="container">
+      <h2 class="sous-titre-section">Événements passés</h2>
+      <p class="passes-intro">Retour sur nos derniers événements et ce qu'ils ont apporté à notre communauté.</p>
+
+      <div class="passes-grid">
+
+        <a href="evenement-passe-cafe-printemps.html" class="passe-card">
+          <div class="passe-photo-wrap">
+            <div class="passe-photo-placeholder">
+              <!-- <img src="images/passe-cafe.jpg" alt="Café des femmes"> -->
+              <span>Photo</span>
+            </div>
+            <span class="passe-badge">Terminé</span>
+          </div>
+          <div class="passe-info">
+            <span class="passe-date">date de l'ev passé</span>
+            <h3>Nom de l'événement passé 1</h3>
+            <p>description de l'événement passé 1</p>
+            <span class="passe-lien">Voir le compte-rendu →</span>
+          </div>
+        </a>
+
+        <a href="evenement-passe-permanence-janvier.html" class="passe-card">
+          <div class="passe-photo-wrap">
+            <div class="passe-photo-placeholder">
+              <!-- <img src="images/passe-permanence.jpg" alt="Permanence juridique"> -->
+              <span>Photo</span>
+            </div>
+            <span class="passe-badge">Terminé</span>
+          </div>
+          <div class="passe-info">
+            <span class="passe-date">date de l'ev passé</span>
+            <h3>Nom de l'événement passé 2</h3>
+            <p>description de l'événement passé 2</p>
+            <span class="passe-lien">Voir le compte-rendu →</span>
+          </div>
+        </a>
+
+        <a href="evenement-passe-atelier-couture.html" class="passe-card">
+          <div class="passe-photo-wrap">
+            <div class="passe-photo-placeholder">
+              <!-- <img src="images/passe-atelier.jpg" alt="Atelier bien-être et sophrologie"> -->
+              <span>Photo</span>
+            </div>
+            <span class="passe-badge">Terminé</span>
+          </div>
+          <div class="passe-info">
+            <span class="passe-date">date de l'ev passé</span>
+            <h3>Nom de l'événement passé 3</h3>
+            <p>description de l'événement passé 3</p>
+            <span class="passe-lien">Voir le compte-rendu →</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
@@ -159,19 +219,19 @@
       <div class="footer-col">
         <h4>Aide &amp; Ressources</h4>
         <ul>
-          <li><a href="https://solidaritefemmes.org/appeler-le-3919/">3919 — Violences Femmes</a></li>
-        <!--  <li><a href="#">115 — Urgence sociale</a></li> 
+          <li><a href="#">3919 — Violences Femmes</a></li>
+          <li><a href="#">115 — Urgence sociale</a></li>
           <li><a href="#">Droits des femmes</a></li>
           <li><a href="#">Hébergement d'urgence</a></li>
           <li><a href="#">Aide juridictionnelle</a></li>
-          <li><a href="#">Soutien psychologique</a></li> -->
+          <li><a href="#">Soutien psychologique</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Nous Contacter</h4>
         <ul>
           <li><a href="contact.html">Formulaire de contact</a></li>
-          <li><a href="mailto:contact@villagefemmes.fr">villagesdesfemmes@gmail.com</a></li>
+          <li><a href="mailto:contact@villagefemmes.fr">contact@villagefemmes.fr</a></li>
           <li><a href="#">01 XX XX XX XX</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Instagram</a></li>
@@ -180,6 +240,16 @@
     </div>
     <div class="footer-bottom">&copy; 2024 Village des Femmes — Tous droits réservés</div>
   </footer>
+
+  <!-- ══ MOLETTE SCROLL HAUT / BAS ══ -->
+  <div class="scroll-nav">
+    <button class="scroll-btn scroll-top" id="scroll-top" aria-label="Remonter en haut de la page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    <button class="scroll-btn scroll-bottom" id="scroll-bottom" aria-label="Aller en bas de la page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+  </div>
 
   <script src="main.js"></script>
 </body>

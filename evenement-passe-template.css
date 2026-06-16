@@ -1,0 +1,170 @@
+/* ============================================
+   COMPTE-RENDU ÉVÉNEMENT PASSÉ — Styles communs
+   ============================================ */
+
+.cr-hero {
+  background: var(--rose-pale);
+  padding: 48px 40px;
+}
+.cr-retour {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texte-clair);
+  margin-bottom: 18px;
+  transition: color var(--transition);
+}
+.cr-retour:hover { color: var(--rose-vif); }
+
+.cr-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.cr-badge-termine {
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: 30px;
+}
+.cr-date {
+  font-size: 0.85rem;
+  color: var(--texte-clair);
+  font-weight: 600;
+}
+
+.cr-hero h1 { max-width: 700px; }
+
+/* ── Contenu ── */
+.cr-contenu {
+  padding: 64px 0;
+  background: var(--blanc);
+}
+.cr-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cr-photo-principale {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  background: var(--rose-pale);
+  border: 2px dashed var(--rose-vif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--rose-vif);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+}
+.cr-photo-principale img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.cr-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+.cr-texte p {
+  font-size: 0.95rem;
+  color: var(--texte-clair);
+  line-height: 1.85;
+}
+.cr-texte h2 {
+  font-size: 1.4rem;
+  color: var(--texte);
+  margin-top: 12px;
+}
+
+/* Chiffres clés de l'événement */
+.cr-chiffres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+  padding: 28px;
+  background: var(--gris-clair);
+  border-radius: var(--radius-lg);
+}
+.cr-chiffre { text-align: center; }
+.cr-chiffre-nombre {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--rose-vif);
+}
+.cr-chiffre-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texte-clair);
+}
+
+/* Galerie photos */
+.cr-galerie {
+  margin-bottom: 48px;
+}
+.cr-galerie h2 { margin-bottom: 20px; font-size: 1.3rem; }
+.cr-galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.cr-galerie-item {
+  aspect-ratio: 1/1;
+  border-radius: var(--radius);
+  background: var(--rose-pale);
+  border: 2px dashed var(--rose-vif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--rose-vif);
+  text-transform: uppercase;
+}
+.cr-galerie-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* CTA bas de page */
+.cr-cta {
+  background: var(--rose-pale);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  text-align: center;
+}
+.cr-cta h3 { margin-bottom: 10px; }
+.cr-cta p {
+  font-size: 0.9rem;
+  color: var(--texte-clair);
+  margin-bottom: 22px;
+}
+.cr-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cr-hero { padding: 36px 20px; }
+  .cr-contenu { padding: 44px 0; }
+  .cr-chiffres { grid-template-columns: 1fr; gap: 16px; }
+  .cr-galerie-grid { grid-template-columns: 1fr 1fr; }
+}

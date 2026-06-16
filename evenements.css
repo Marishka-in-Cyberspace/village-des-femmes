@@ -81,6 +81,108 @@
   line-height: 1.8;
 }
 
+/* ── Sous-titre de section ── */
+.sous-titre-section {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  margin-bottom: 16px;
+}
+.passes-intro {
+  font-size: 0.92rem;
+  color: var(--texte-clair);
+  margin-bottom: 40px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ── Événements passés ── */
+.evenements-passes {
+  padding: 80px 0;
+  background: var(--gris-clair);
+}
+
+.passes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.passe-card {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+  background: var(--blanc);
+  transition: box-shadow var(--transition), transform var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+.passe-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.passe-photo-wrap { position: relative; }
+.passe-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #e3e3e3;
+  border: 2px dashed #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  filter: saturate(0.5);
+}
+.passe-photo-wrap img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  filter: saturate(0.7);
+}
+.passe-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+
+.passe-info { padding: 18px 20px 22px; }
+.passe-date {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--texte-clair);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.passe-info h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 6px 0 8px;
+  color: var(--texte);
+}
+.passe-info p {
+  font-size: 0.83rem;
+  color: var(--texte-clair);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.passe-lien {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--rose-vif);
+}
+
 /* ── CTA ── */
 .cta-evenements { background: var(--rose-pale); padding: 72px 0; }
 .cta-evt-inner { text-align: center; }
@@ -104,5 +206,10 @@
     padding-bottom: 48px;
   }
   .liste-evenements { padding: 48px 0; }
+  .evenements-passes { padding: 48px 0; }
+  .passes-grid { grid-template-columns: 1fr 1fr; }
   .cta-evenements { padding: 48px 0; }
+}
+@media (max-width: 560px) {
+  .passes-grid { grid-template-columns: 1fr; }
 }
