@@ -64,3 +64,4 @@ Le site utilise Google Fonts:
 
 14/06/26 CSS changé, body ajouté aux pages "notre mission" "aide et accompagnement""evenemensts""contact"
 15/06/26 Modif du read me et du texte de certaines pages html 
+16/06/26 photos ajoutées, événements passés crées, une molette monter descendre à rajouter (suffit de copier le code déjà crée). 
