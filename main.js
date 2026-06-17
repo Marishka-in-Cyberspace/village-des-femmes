@@ -62,31 +62,37 @@ if (btnDon) {
   });
 }
 
-// ── Formulaire contact (simulation) ──
+// ── Formulaire contact (envoi réel via envoyer-message.php) ──
+// Le formulaire envoie désormais les données directement au script PHP
+// (voir l'attribut action="envoyer-message.php" dans contact.html).
+// Ce script lit juste le résultat renvoyé dans l'URL après l'envoi,
+// pour afficher le bon message de succès ou d'erreur.
 
-const btnSubmit  = document.getElementById('btn-submit');
 const formSuccess = document.getElementById('form-success');
+const formError   = document.getElementById('form-error');
 
-if (btnSubmit && formSuccess) {
-  btnSubmit.addEventListener('click', () => {
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    const rgpd = document.getElementById('rgpd');
+if (formSuccess || formError) {
+  const params = new URLSearchParams(window.location.search);
+  const statut = params.get('statut');
 
-    if (!email || !email.value || !message || !message.value) {
-      alert('Merci de remplir tous les champs obligatoires (*).');
-      return;
-    }
-    if (rgpd && !rgpd.checked) {
-      alert('Veuillez accepter la politique de confidentialité.');
-      return;
-    }
-    // Ici tu brancheras ton backend ou service email (Formspree, EmailJS…)
+  if (statut === 'succes' && formSuccess) {
     formSuccess.hidden = false;
-    btnSubmit.disabled = true;
-    btnSubmit.textContent = 'Message envoyé ✓';
-    btnSubmit.style.background = '#4A8A75';
-  });
+    const btn = document.getElementById('btn-submit');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Message envoyé ✓';
+      btn.style.background = '#4A8A75';
+    }
+    // Nettoie l'URL pour éviter de réafficher le message si on rafraîchit la page
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
+  if (statut === 'erreur' && formError) {
+    const messageErreur = params.get('message');
+    formError.hidden = false;
+    formError.textContent = '⚠️ ' + (messageErreur || "Une erreur est survenue. Merci de réessayer.");
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 }
 
   // ── Molette de navigation (scroll haut / bas) ──
