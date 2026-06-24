@@ -26,8 +26,14 @@ const btnAutre    = document.getElementById('btn-autre');
 const autreWrap   = document.getElementById('autre-wrap');
 const montantLibre = document.getElementById('montant-libre');
 const btnDon      = document.getElementById('btn-don');
+const montantHidden = document.getElementById('montant-hidden');
+const donForm     = document.getElementById('don-form');
 
 let montantSelectionne = 20;
+
+function syncMontantHidden() {
+  if (montantHidden) montantHidden.value = montantSelectionne;
+}
 
 montantBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -36,6 +42,7 @@ montantBtns.forEach(btn => {
     btn.classList.add('active');
     montantSelectionne = parseInt(btn.dataset.montant);
     if (autreWrap) autreWrap.hidden = true;
+    syncMontantHidden();
   });
 });
 
@@ -49,16 +56,22 @@ if (btnAutre && autreWrap) {
   if (montantLibre) {
     montantLibre.addEventListener('input', () => {
       montantSelectionne = parseInt(montantLibre.value) || 0;
+      syncMontantHidden();
     });
   }
 }
 
-// Lien don — remplace l'URL par celle de ta plateforme (HelloAsso, PayPal, Stripe…)
-if (btnDon) {
-  btnDon.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Exemple : window.location.href = `https://www.helloasso.com/…?montant=${montantSelectionne}`;
-    alert(`Redirection vers le paiement pour ${montantSelectionne}€\n(À configurer avec votre plateforme de don)`);
+// Le bouton "Je fais un don" soumet désormais le formulaire vers enregistrer-don.php
+// qui enregistre la tentative de don en base avant de rediriger vers la plateforme de paiement.
+if (donForm) {
+  donForm.addEventListener('submit', (e) => {
+    if (montantSelectionne <= 0) {
+      e.preventDefault();
+      alert('Merci de choisir ou saisir un montant valide.');
+      return;
+    }
+    syncMontantHidden();
+    // Le formulaire se soumet normalement vers action="enregistrer-don.php"
   });
 }
 
