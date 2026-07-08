@@ -1,5 +1,5 @@
 <?php
-// Variable attendue : $admin_page_active = 'dashboard' | 'evenements' | 'messages' | 'dons' | 'benevoles'
+// Variable attendue : $admin_page_active = 'dashboard' | 'evenements' | 'messages' | 'dons' | 'benevoles' | 'utilisateurs' | 'inscriptions'
 $admin_page_active = $admin_page_active ?? '';
 function adminNavActive(string $page, string $current): string {
     return $page === $current ? ' class="active"' : '';
@@ -19,7 +19,9 @@ function adminNavActive(string $page, string $current): string {
 <nav class="admin-nav">
   <a href="dashboard.php"<?= adminNavActive('dashboard', $admin_page_active) ?>>Tableau de bord</a>
   <a href="evenements.php"<?= adminNavActive('evenements', $admin_page_active) ?>>Événements</a>
-  <a href="messages.php"<?= adminNavActive('messages', $admin_page_active) ?>>Messages de contact</a>
+  <a href="inscriptions.php"<?= adminNavActive('inscriptions', $admin_page_active) ?>>Participants</a>
+  <a href="messages.php"<?= adminNavActive('messages', $admin_page_active) ?>>Messages</a>
   <a href="dons.php"<?= adminNavActive('dons', $admin_page_active) ?>>Dons</a>
   <a href="benevoles.php"<?= adminNavActive('benevoles', $admin_page_active) ?>>Bénévoles</a>
+  <a href="utilisateurs.php"<?= adminNavActive('utilisateurs', $admin_page_active) ?>>Comptes utilisateurs</a>
 </nav>

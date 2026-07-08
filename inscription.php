@@ -9,19 +9,19 @@ if (estConnecte()) {
 }
 
 $erreur = '';
-$valeurs = ['prenom' => '', 'nom' => '', 'email' => '', 'telephone' => '', 'role' => 'donateur'];
+$valeurs = ['prenom' => '', 'nom' => '', 'email' => '', 'telephone' => '', 'role' => 'utilisateur'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $valeurs['prenom']    = nettoyer($_POST['prenom'] ?? '');
     $valeurs['nom']       = nettoyer($_POST['nom'] ?? '');
     $valeurs['email']     = nettoyer($_POST['email'] ?? '');
     $valeurs['telephone'] = nettoyer($_POST['telephone'] ?? '');
-    $valeurs['role']      = nettoyer($_POST['role'] ?? 'donateur');
+    $valeurs['role']      = nettoyer($_POST['role'] ?? 'utilisateur');
     $mot_de_passe         = $_POST['mot_de_passe'] ?? '';
     $mot_de_passe_confirm = $_POST['mot_de_passe_confirm'] ?? '';
     $rgpd                 = isset($_POST['rgpd']);
 
-    $roles_valides = ['donateur', 'benevole'];
+    $roles_valides = ['utilisateur', 'benevole'];
 
     if (empty($valeurs['prenom']) || empty($valeurs['nom'])) {
         $erreur = "Le prénom et le nom sont requis.";
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['role'] = $valeurs['role'];
                 $_SESSION['prenom'] = $valeurs['prenom'];
 
-                $redirection = ($valeurs['role'] === 'benevole') ? 'mon-compte.php?bienvenue=benevole' : 'mon-compte.php?bienvenue=donateur';
+                $redirection = ($valeurs['role'] === 'benevole') ? 'mon-compte.php?bienvenue=benevole' : 'mon-compte.php?bienvenue=utilisateur';
                 header('Location: ' . $redirection);
                 exit;
 
@@ -117,8 +117,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Je m'inscris en tant que *</label>
             <div class="role-choix">
               <label class="role-card">
-                <input type="radio" name="role" value="donateur" <?= $valeurs['role'] === 'donateur' ? 'checked' : '' ?> />
-                <span>💛 Donateur / Donatrice</span>
+                <input type="radio" name="role" value="utilisateur" <?= $valeurs['role'] === 'utilisateur' ? 'checked' : '' ?> />
+                <span>💛 Utilisateur</span>
               </label>
               <label class="role-card">
                 <input type="radio" name="role" value="benevole" <?= $valeurs['role'] === 'benevole' ? 'checked' : '' ?> />

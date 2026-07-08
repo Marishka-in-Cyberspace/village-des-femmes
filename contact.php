@@ -117,9 +117,9 @@ $page_active = 'contact';
         <div class="reseaux">
           <h3>Suivez-nous</h3>
           <div class="reseaux-liens">
-            <a href="#" class="reseau-btn">Facebook</a>
-            <a href="#" class="reseau-btn">Instagram</a>
-            <a href="#" class="reseau-btn">LinkedIn</a>
+            <a href="<?= htmlspecialchars(LIEN_FACEBOOK) ?>" class="reseau-btn" target="_blank" rel="noopener">Facebook</a>
+            <a href="<?= htmlspecialchars(LIEN_INSTAGRAM) ?>" class="reseau-btn" target="_blank" rel="noopener">Instagram</a>
+            <a href="<?= htmlspecialchars(LIEN_LINKEDIN) ?>" class="reseau-btn" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
 

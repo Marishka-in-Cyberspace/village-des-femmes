@@ -11,7 +11,7 @@
 -- USE village_femmes;
 
 -- ────────────────────────────────────────────────────────────
--- 1. UTILISATEURS (donateurs, bénévoles, admin)
+-- 1. UTILISATEURS (utilisateurs, bénévoles, admin)
 -- ────────────────────────────────────────────────────────────
 CREATE TABLE utilisateurs (
     id              INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE utilisateurs (
     prenom          VARCHAR(100) NOT NULL,
     nom             VARCHAR(100) NOT NULL,
     telephone       VARCHAR(20),
-    role            ENUM('donateur', 'benevole', 'admin') NOT NULL DEFAULT 'donateur',
+    role            ENUM('utilisateur', 'benevole', 'admin') NOT NULL DEFAULT 'utilisateur',
     date_creation   DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     derniere_connexion DATETIME,
     actif           BOOLEAN NOT NULL DEFAULT TRUE,

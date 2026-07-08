@@ -16,7 +16,7 @@ VALUES (2, 'un_jour_semaine', 'Soutien psychologique, écoute active, ancienne a
 
 -- Donateur
 INSERT INTO utilisateurs (email, mot_de_passe, prenom, nom, role, email_verifie)
-VALUES ('sophie.donatrice@email.fr', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Sophie', 'Martin', 'donateur', TRUE);
+VALUES ('sophie.donatrice@email.fr', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Sophie', 'Martin', 'utilisateur', TRUE);
 
 -- ── Événements À VENIR ──
 INSERT INTO evenements (titre, slug, type_evenement, description_courte, description_longue, date_debut, lieu, prix_public, statut, cree_par)

@@ -30,9 +30,9 @@ $page_active = 'nous-soutenir';
       </div>
     </div>
     <div class="hero-photo">
-      <div class="hero-soutenir-placeholder">
-        <span>Photo</span>
-      </div>
+        <div class="hero-soutenir-placeholder">
+        <img src="images/nous-soutenir.jpg" alt="Nous soutenir" />
+        </div>
     </div>
   </section>
 
@@ -92,8 +92,14 @@ $page_active = 'nous-soutenir';
           </div>
           <input type="hidden" name="montant" id="montant-hidden" value="20" />
 
-          <button type="submit" class="btn btn-rose btn-don" id="btn-don">Je fais un don</button>
+          <button type="submit" class="btn btn-rose btn-don" id="btn-don">Je fais un don (HelloAsso)</button>
         </form>
+
+        <?php if (LIEN_PAYPAL !== '#'): ?>
+          <a href="<?= htmlspecialchars(LIEN_PAYPAL) ?>" target="_blank" rel="noopener" class="btn btn-outline-vert btn-don" style="margin-top:10px;">
+            Faire un don via PayPal
+          </a>
+        <?php endif; ?>
 
         <p class="don-note">🔒 Paiement sécurisé · Reçu fiscal disponible</p>
       </div>
@@ -120,7 +126,7 @@ $page_active = 'nous-soutenir';
       </div>
       <div class="benevole-photo">
         <div class="benevole-placeholder">
-          <span>Photo équipe</span>
+          <img src="images/histoire-photo.jpg" alt="benevoles">
         </div>
       </div>
     </div>

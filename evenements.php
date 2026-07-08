@@ -5,7 +5,10 @@ $page_active = 'evenements';
 $pdo = getPDO();
 
 $stmt = $pdo->prepare("
-    SELECT * FROM evenements
+    SELECT e.*,
+        (SELECT COUNT(*) FROM inscriptions_evenements ie
+         WHERE ie.evenement_id = e.id AND ie.statut = 'confirme') AS nb_inscrits
+    FROM evenements e
     WHERE statut = 'a_venir' AND date_debut >= NOW()
     ORDER BY date_debut ASC
 ");
@@ -19,6 +22,20 @@ $stmt = $pdo->prepare("
 ");
 $stmt->execute();
 $evenements_passes = $stmt->fetchAll();
+
+// Si l'utilisateur est connecté, on récupère ses inscriptions pour ne pas afficher "S'inscrire" sur un event déjà rejoint
+$mes_inscriptions = [];
+if (estConnecte()) {
+    $stmt = $pdo->prepare("SELECT evenement_id, statut FROM inscriptions_evenements WHERE utilisateur_id = :uid");
+    $stmt->execute(['uid' => $_SESSION['utilisateur_id']]);
+    foreach ($stmt->fetchAll() as $row) {
+        $mes_inscriptions[$row['evenement_id']] = $row['statut'];
+    }
+}
+
+// Messages flash
+$statut_flash = $_GET['statut'] ?? '';
+$erreur_flash = $_GET['erreur'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,10 +66,24 @@ $evenements_passes = $stmt->fetchAll();
 
       <h2 class="sous-titre-section">Événements à venir</h2>
 
+      <?php if ($statut_flash === 'inscrit'): ?>
+        <p class="admin-msg-success" style="margin-bottom:24px;">🎉 Ton inscription est confirmée !</p>
+      <?php elseif ($statut_flash === 'liste_attente'): ?>
+        <p class="admin-msg-success" style="margin-bottom:24px;">⏳ L'événement est complet — tu as été ajouté(e) sur liste d'attente.</p>
+      <?php elseif ($statut_flash === 'deja_inscrit'): ?>
+        <p class="admin-msg-error" style="margin-bottom:24px;">Tu es déjà inscrit(e) à cet événement.</p>
+      <?php elseif ($erreur_flash): ?>
+        <p class="admin-msg-error" style="margin-bottom:24px;">Une erreur est survenue. Merci de réessayer.</p>
+      <?php endif; ?>
+
       <?php if (empty($evenements_a_venir)): ?>
         <p>Aucun événement à venir pour le moment. Revenez bientôt !</p>
       <?php else: ?>
         <?php foreach ($evenements_a_venir as $evt): ?>
+          <?php
+            $est_complet = $evt['places_max'] && $evt['nb_inscrits'] >= $evt['places_max'];
+            $mon_statut  = $mes_inscriptions[$evt['id']] ?? null;
+          ?>
           <article class="evt-detail" id="evt<?= $evt['id'] ?>">
             <div class="evt-photo">
               <?php if (!empty($evt['image_principale'])): ?>
@@ -67,6 +98,11 @@ $evenements_passes = $stmt->fetchAll();
                 <?php if (!empty($evt['type_evenement'])): ?>
                   <span class="evt-type"><?= htmlspecialchars($evt['type_evenement']) ?></span>
                 <?php endif; ?>
+                <?php if ($evt['places_max']): ?>
+                  <span class="evt-type" style="border-color:#888; color:#888;">
+                    <?= $evt['nb_inscrits'] ?>/<?= $evt['places_max'] ?> places
+                  </span>
+                <?php endif; ?>
               </div>
               <h2><?= htmlspecialchars($evt['titre']) ?></h2>
               <div class="evt-infos">
@@ -77,7 +113,50 @@ $evenements_passes = $stmt->fetchAll();
                 <?php endif; ?>
               </div>
               <p><?= htmlspecialchars($evt['description_courte'] ?? '') ?></p>
-              <a href="contact.php" class="btn btn-rose">S'inscrire</a>
+
+              <!-- ── Bouton / formulaire d'inscription ── -->
+              <?php if ($mon_statut === 'confirme'): ?>
+                <p class="inscription-ok">✅ Tu es inscrit(e) à cet événement</p>
+
+              <?php elseif ($mon_statut === 'liste_attente'): ?>
+                <p class="inscription-ok" style="background:#fff8e1; color:#b08000; border-color:#ffe082;">
+                  ⏳ Tu es sur liste d'attente
+                </p>
+
+              <?php elseif (estConnecte()): ?>
+                <!-- Connecté → 1 clic -->
+                <form action="inscrire-evenement.php" method="POST">
+                  <input type="hidden" name="evenement_id" value="<?= $evt['id'] ?>" />
+                  <button type="submit" class="btn <?= $est_complet ? 'btn-outline-vert' : 'btn-rose' ?>">
+                    <?= $est_complet ? "Rejoindre la liste d'attente" : "S'inscrire" ?>
+                  </button>
+                </form>
+
+              <?php else: ?>
+                <!-- Non connecté → mini formulaire dépliable -->
+                <div class="inscription-guest">
+                  <p class="inscription-guest-intro">
+                    <a href="connexion.php" class="btn btn-rose btn-sm">Se connecter pour s'inscrire</a>
+                    <span style="font-size:0.8rem; color:#888; margin:0 8px;">ou</span>
+                  </p>
+                  <details class="inscription-guest-form">
+                    <summary><?= $est_complet ? "Rejoindre la liste d'attente sans compte" : "S'inscrire sans compte" ?></summary>
+                    <form action="inscrire-evenement.php" method="POST" style="margin-top:12px;">
+                      <input type="hidden" name="evenement_id" value="<?= $evt['id'] ?>" />
+                      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+                        <input type="text" name="nom_invite" placeholder="Votre nom *" required
+                               style="padding:9px 14px; border:2px solid #e0e0e0; border-radius:8px; font-size:0.88rem;" />
+                        <input type="email" name="email_invite" placeholder="Votre email *" required
+                               style="padding:9px 14px; border:2px solid #e0e0e0; border-radius:8px; font-size:0.88rem;" />
+                      </div>
+                      <button type="submit" class="btn <?= $est_complet ? 'btn-outline-vert' : 'btn-rose' ?>" style="font-size:0.8rem; padding:9px 20px;">
+                        <?= $est_complet ? "Rejoindre la liste d'attente" : "Confirmer mon inscription" ?>
+                      </button>
+                    </form>
+                  </details>
+                </div>
+              <?php endif; ?>
+
             </div>
           </article>
         <?php endforeach; ?>

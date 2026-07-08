@@ -101,7 +101,7 @@ $bienvenue = $_GET['bienvenue'] ?? '';
         <p class="admin-msg-success" style="margin-bottom:24px;">
           🎉 Bienvenue ! Ta candidature bénévole a été enregistrée, elle est en attente de validation par notre équipe.
         </p>
-      <?php elseif ($bienvenue === 'donateur'): ?>
+      <?php elseif ($bienvenue === 'utilisateur'): ?>
         <p class="admin-msg-success" style="margin-bottom:24px;">
           🎉 Bienvenue ! Ton compte a bien été créé.
         </p>

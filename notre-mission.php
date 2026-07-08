@@ -39,9 +39,15 @@ $page_active = 'notre-mission';
   <section class="histoire">
     <div class="container histoire-inner">
       <div class="histoire-photo">
-        <div class="histoire-img-placeholder">
-          <span>Photo</span>
-        </div>
+        <?php if (file_exists(__DIR__ . '/images/histoire.jpg')): ?>
+          <img src="images/histoire.jpg" alt="Histoire de l'association" />
+        <?php elseif (file_exists(__DIR__ . '/images/mission.JPG')): ?>
+          <img src="images/mission.JPG" alt="Histoire de l'association" />
+        <?php else: ?>
+          <div class="histoire-img-placeholder">
+            <span>Photo<br><small style="font-weight:400; text-transform:none; letter-spacing:0;">Ajoute images/histoire.jpg</small></span>
+          </div>
+        <?php endif; ?>
       </div>
       <div class="histoire-text">
         <span class="section-tag">Notre histoire</span>

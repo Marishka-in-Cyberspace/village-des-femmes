@@ -31,9 +31,9 @@
         <li><a href="contact.php">Formulaire de contact</a></li>
         <li><a href="mailto:villagesdesfemmes@gmail.com">villagesdesfemmes@gmail.com</a></li>
         <li><a href="#">01 XX XX XX XX</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">LinkedIn</a></li>
+        <li><a href="<?= htmlspecialchars(LIEN_FACEBOOK) ?>" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="<?= htmlspecialchars(LIEN_INSTAGRAM) ?>" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="<?= htmlspecialchars(LIEN_LINKEDIN) ?>" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </div>
