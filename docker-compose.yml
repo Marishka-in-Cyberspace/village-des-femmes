@@ -13,6 +13,23 @@
 # =============================================================
 
 services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "8080:80"
+
+      - "443:443"
+
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+
+    depends_on:
+      - web
+
+
 
   # -----------------------------------------------------------
   # CONTENEUR 1 : "web" — Le serveur web (PHP + Apache)
@@ -28,7 +45,7 @@ services:
     # On le rend accessible sur le port 8080 de ton PC.
     # → Tu ouvres http://localhost:8080 dans ton navigateur et ça marche !
     ports:
-      - "8080:80"
+      - "80"
 
     # Ce conteneur doit attendre que "db" soit prêt avant de démarrer.
     # Sans ça, le PHP essaierait de se connecter à MySQL avant qu'il soit lancé
@@ -70,6 +87,7 @@ services:
       # Sans ça, toutes les données disparaissent quand le conteneur s'arrête !
       - db_data:/var/lib/mysql
 
+
       # Fichiers SQL d'initialisation :
       # Tout fichier .sql placé dans /docker-entrypoint-initdb.d/
       # est exécuté automatiquement au premier démarrage de MySQL.
@@ -97,3 +115,5 @@ services:
 # → docker compose down -v      : conteneurs ET données supprimés (repart de zéro)
 volumes:
   db_data:
+  caddy_data:
+  caddy_config:
