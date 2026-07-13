@@ -1,0 +1,99 @@
+# =============================================================
+# DOCKER-COMPOSE — Chef d'orchestre des conteneurs
+#
+# docker-compose permet de démarrer PLUSIEURS conteneurs en même temps
+# et de les faire communiquer entre eux.
+#
+# Ici on a besoin de 2 conteneurs :
+#   1. "web" → le serveur Apache/PHP qui affiche le site
+#   2. "db"  → le serveur MySQL qui stocke les données
+#
+# Pour tout lancer d'un coup : docker compose up --build
+# Pour tout arrêter          : docker compose down
+# =============================================================
+
+services:
+
+  # -----------------------------------------------------------
+  # CONTENEUR 1 : "web" — Le serveur web (PHP + Apache)
+  # -----------------------------------------------------------
+  web:
+
+    # "build: ." = construire l'image à partir du Dockerfile
+    # qui se trouve dans le dossier courant (le ".")
+    build: .
+
+    # Redirection de port : "PC:conteneur"
+    # Le conteneur écoute en interne sur le port 80 (port HTTP standard).
+    # On le rend accessible sur le port 8080 de ton PC.
+    # → Tu ouvres http://localhost:8080 dans ton navigateur et ça marche !
+    ports:
+      - "8080:80"
+
+    # Ce conteneur doit attendre que "db" soit prêt avant de démarrer.
+    # Sans ça, le PHP essaierait de se connecter à MySQL avant qu'il soit lancé
+    # et le site afficherait une erreur de connexion.
+    depends_on:
+      db:
+        condition: service_healthy   # attendre que le healthcheck de "db" soit OK
+
+    # Variables d'environnement = des paramètres passés au conteneur.
+    # Le fichier config/database.php les lit avec getenv().
+    # Grâce à ça, on n'a pas à modifier le code source pour changer la config.
+    environment:
+      DB_HOST: db            # "db" = le nom du conteneur MySQL (Docker les connecte automatiquement)
+      DB_NAME: village_femmes  # nom de la base de données
+      DB_USER: village_user    # utilisateur MySQL (pas root, c'est plus sécurisé)
+      DB_PASS: village_pass    # mot de passe MySQL
+
+
+  # -----------------------------------------------------------
+  # CONTENEUR 2 : "db" — La base de données MySQL
+  # -----------------------------------------------------------
+  db:
+
+    # On utilise l'image officielle MySQL version 8.0
+    # (pas besoin d'un Dockerfile custom, MySQL est déjà packagé)
+    image: mysql:8.0
+
+    # Configuration de MySQL via des variables d'environnement officielles.
+    # MySQL les lit au premier démarrage pour créer la BDD automatiquement.
+    environment:
+      MYSQL_DATABASE: village_femmes   # crée cette base de données au démarrage
+      MYSQL_USER: village_user          # crée cet utilisateur
+      MYSQL_PASSWORD: village_pass      # avec ce mot de passe
+      MYSQL_ROOT_PASSWORD: rootpass     # mot de passe du super-admin MySQL (root)
+
+    # Volumes = des "dossiers partagés" entre ton PC et le conteneur
+    volumes:
+      # Volume nommé : les données MySQL sont sauvegardées ici.
+      # Sans ça, toutes les données disparaissent quand le conteneur s'arrête !
+      - db_data:/var/lib/mysql
+
+      # Fichiers SQL d'initialisation :
+      # Tout fichier .sql placé dans /docker-entrypoint-initdb.d/
+      # est exécuté automatiquement au premier démarrage de MySQL.
+      # On charge d'abord le schéma (création des tables), puis les données exemple.
+      - ./village_des_femmes/sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./village_des_femmes/sql/donnees_exemple.sql:/docker-entrypoint-initdb.d/02_donnees.sql
+
+    # Healthcheck = test de santé régulier.
+    # Docker vérifie que MySQL répond vraiment avant d'autoriser "web" à démarrer.
+    # "mysqladmin ping" est une commande MySQL qui répond "mysqld is alive" si tout va bien.
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s    # vérifie toutes les 5 secondes
+      timeout: 10s    # échec si pas de réponse en 10 secondes
+      retries: 10     # réessaie 10 fois avant de déclarer le service mort
+
+
+# -----------------------------------------------------------
+# VOLUMES nommés
+# -----------------------------------------------------------
+# Déclaration du volume "db_data".
+# C'est un espace de stockage géré par Docker sur ton PC.
+# Les données MySQL y survivent même quand le conteneur est arrêté.
+# → docker compose down         : conteneurs supprimés, données conservées
+# → docker compose down -v      : conteneurs ET données supprimés (repart de zéro)
+volumes:
+  db_data:

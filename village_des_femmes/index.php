@@ -92,7 +92,7 @@ $evenements_a_venir = $stmt->fetchAll();
     <div class="mission-inner">
       <div class="mission-photo">
         <div class="mission-photo-placeholder">
-          <img src="images/mission.jpg" alt="Notre mission">
+          <img src="images/mission.JPG" alt="Notre mission">
         </div>
       </div>
       <div class="mission-text">

@@ -6,10 +6,10 @@
    (OVH, o2switch, Hostinger… ou environnement local).
 */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'village_femmes');
-define('DB_USER', 'root');          // à remplacer par ton utilisateur MySQL
-define('DB_PASS', '');              // à remplacer par ton mot de passe MySQL
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'village_femmes');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
 function getPDO(): PDO {

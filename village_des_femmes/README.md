@@ -3,7 +3,7 @@
 ## 🗂️ Structure du projet
 
 ```
-vdf-final/
+village_des_femmes/
 ├── index.php                    ← Accueil (événements à venir dynamiques)
 ├── notre-mission.php
 ├── aide-accompagnement.php
@@ -39,7 +39,7 @@ vdf-final/
 │   ├── donnees_exemple.sql       ← Données de test (à exécuter en 2nd, optionnel)
 │   └── .htaccess
 │
-├── images/                       ← Dossier à remplir avec tes vraies images
+├── images/                       ← Dossier rempli avec mes images
 │
 └── admin/                        ← Back-office (réservé aux comptes "admin")
     ├── login.php / logout.php
@@ -162,3 +162,57 @@ Le site utilise Google Fonts :
 
 ---
 Dernière mise à jour : connexion complète du site à une base MySQL avec espace admin.
+
+## Création du dockerfile et dockerisation du site 
+- Création dossier website_stage ou l'on mets le dossier du site, puis créer un fichier "Dockerfile" sans extension dans ce même dossier
+- Dans le fichier "Dockerfile" créer le serveur qui vas transporter tout le dossier du site 
+- Dedans faire comme ceci : 
+                FROM php:8.2-apache
+                RUN docker-php-ext-install pdo pdo_mysql
+                RUN a2enmod rewrite
+                RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+                COPY ./village_des_femmes/ /var/www/html/
+                RUN chown -R www-data:www-data /var/www/html/
+- Pour lancer le conteneur docker run -d -p
+- Créer l'image du dockerfile : sudo docker build -t website . (-t c'est pour indiquer un nom, ici website)
+- Pour afficher les images crées : sudo docker images
+- Pour ne pas écrire sudo à chaque fois : sudo usermod -aG docker $USER
+- Ensuite créer un fichier docker-compose.yml qui sera placé également dans le dossier website_stage 
+- Dedans écrire comme ceci (faire attention aux espaces et indentations): 
+                            services:
+                              web:
+                                build: .
+                                ports:
+                                  - "8080:80"
+                                depends_on:
+                                  db:
+                                    condition: service_healthy 
+                                environment 
+                                  DB_HOST: db (nom du conteneur mysql)
+                                  DB_NAME: village_femmes (nom de la bdd)
+                                  DB_USER: village_user (plus securisé sans le root)
+                                  DB_PASS: village_pass (mdp MySql)
+                            db:
+                             image: mysql:8.0
+                             environment : 
+                               MYSQL_DATABASE : village_femmes (crée la bdd au démarrage)
+                               MYSQL_USER: village_user (crée l'utilisateur)
+                               MYSQL_PASSWORD: village_pass (mdp crée avec l'user)
+                               MYSQL_ROOT_PASSWORD : rootpass (mdp du superadmin)
+                            volumes : 
+                              - db_data:/var/lib/mysql
+                            healthcheck: 
+                              test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+                              interval: 5s vérifie toutes les 5sec
+                              timeout: 10s *échec si pas de rep en 10 sec
+                              retries: 10 réessaie 10 fois avant de déclarer le service mort 
+                        volumes:
+                          db_data: Déclaration du volume "db_data".
+ C'est un espace de stockage géré par Docker sur ton PC.
+ Les données MySQL y survivent même quand le conteneur est arrêté. 
+ → docker compose down         : conteneurs supprimés, données conservées
+ → docker compose down -v      : conteneurs ET données supprimés (repart de zéro)
+ 
+ On supprime les anciennes images pour partir de zéro et mettre ça au propre : sudo rm -f + ID (sudo docker ps pour les id)
+ On build (ou rebuild) : sudo docker compose up --build -d
+ 
