@@ -216,3 +216,35 @@ Dernière mise à jour : connexion complète du site à une base MySQL avec espa
  On supprime les anciennes images pour partir de zéro et mettre ça au propre : sudo rm -f + ID (sudo docker ps pour les id)
  On build (ou rebuild) : sudo docker compose up --build -d
  
+ 
+## Création du https pour le site 
+- création du Caddyfile ou on écrit ceci 
+                  :80 {
+    reverse_proxy web:80
+}
+
+- Dans le docker-compose on modifie dans services:
+                services: 
+                  caddy:
+                    image: caddy:2
+                    ports:
+                      - "8080:80"
+
+                      - "443:443"
+
+                    volumes:
+                      - ./Caddyfile:/etc/caddy/Caddyfile
+                      - caddy_data:/data
+                      - caddy_config:/config
+
+
+                    depends_on:
+                      - web
+                      
+- Dans volumes on rajoute: 
+              volumes:
+                db_data:
+                caddy_data:
+                caddy_config:
+
+ 
