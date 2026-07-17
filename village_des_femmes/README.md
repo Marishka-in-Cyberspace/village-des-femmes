@@ -246,5 +246,9 @@ Dernière mise à jour : connexion complète du site à une base MySQL avec espa
                 db_data:
                 caddy_data:
                 caddy_config:
+                
+                
+## Sécrisation contre injection SQL 
+- La sécurité contre les injections SQL sert à empêcher qu'un visiteur malveillant insère du code caché dans un formulaire (email, recherche, etc.) pour manipuler la base de données — par exemple accéder à des comptes sans mot de passe, voler des données ou les supprimer. Pour s'en protéger, le site utilise des requêtes préparées avec PDO : au lieu de coller directement ce que l'utilisateur tape dans la requête SQL, on utilise des emplacements réservés (comme :email) et on transmet la valeur séparément, ce qui empêche toute donnée saisie d'être interprétée comme une commande. Après vérification de tous les fichiers PHP du site (formulaires publics et pages admin), aucune faille de ce type n'a été trouvée : le code est déjà sécurisé sur ce point.
 
  
